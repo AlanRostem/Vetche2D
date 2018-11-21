@@ -12,7 +12,7 @@ namespace Vetche2D {
 		Game();
 		~Game();
 
-		sf::RenderWindow &Window();
+		sf::RenderWindow &getWindow();
 		World &getWorld();
 
 		void Update();

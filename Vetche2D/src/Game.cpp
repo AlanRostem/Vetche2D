@@ -10,7 +10,7 @@ Vetche2D::Game::~Game()
 
 }
 
-sf::RenderWindow & Vetche2D::Game::Window()
+sf::RenderWindow & Vetche2D::Game::getWindow()
 {
 	return m_Window;
 }
