@@ -1,0 +1,2 @@
+When cloning this repository to your computer, these .dll files must be contained so the dynamic linkage with the SFML
+library successfully works with the sandbox.
