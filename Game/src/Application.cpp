@@ -10,8 +10,6 @@ void vtc::Setup()
 	e1 = new vtc::Character(0.f, 0.f, 32.f, 32.f, 250.f);
 }
 
-const char * Hello = "You cock of a sun bucker!";
-
 void vtc::Step()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))

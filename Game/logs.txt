@@ -1,5 +1,8 @@
 
-Entity initialized! - memory address: 00594F30
-Character inherited from PhysicsObject - memory address: 00594F30
-Entity initialized! - memory address: 0C718EA8
-Character inherited from PhysicsObject - memory address: 0C718EA8
+Entity initialized! - memory address: 0C64FF68
+Character inherited from PhysicsObject - memory address: 0C64FF68
+Entity initialized! - memory address: 00115018
+Character inherited from PhysicsObject - memory address: 00115018
+Character event 'ondamage' called  - memory address: 0C64FF68
+Character event 'onremoval' called  - memory address: 0C64FF68
+Character event 'ondead' called  - memory address: 0C64FF68
