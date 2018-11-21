@@ -40,7 +40,7 @@ namespace Vetche2D {
 		// Add an operation that you want to be done with other exsisting entities
 		// This is called in the game loop. If you require certain members of inherited
 		// entities, make sure to do a dynamic cast to your object in order to perform
-		// your wanted calculations.
+		// your wanted calculations. Including Casting.h is recommended
 		void AddEntityOperation(std::function<void(Entity* const &ent)> lambda);
 
 	private:
