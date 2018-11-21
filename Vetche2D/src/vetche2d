@@ -1,0 +1,8 @@
+#include "Engine.h"
+#include "VMath.h"
+#include "Game.h"
+#include "Entity.h"
+#include "Character.h"
+#include "Initialize.h"
+
+namespace vtc = Vetche2D;

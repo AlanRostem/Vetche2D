@@ -1,0 +1,5 @@
+
+Entity initialized! - memory address: 00594F30
+Character inherited from PhysicsObject - memory address: 00594F30
+Entity initialized! - memory address: 0C718EA8
+Character inherited from PhysicsObject - memory address: 0C718EA8

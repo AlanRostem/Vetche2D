@@ -1,0 +1,10 @@
+Entity:
+
+onremoval
+
+Character:
+
+ondead
+ondamage
+onheal
+
