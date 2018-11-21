@@ -6,8 +6,8 @@ vtc::Character * e1;
 
 void vtc::Setup()
 {
-	e = new vtc::Character(0.f, 0.f, 32.f, 32.f, 100.f);
-	e1 = new vtc::Character(0.f, 0.f, 32.f, 32.f, 250.f);
+	e = new vtc::Character(65.f, 55.f, 32.f, 32.f, 100.f);
+	e1 = new vtc::Character(234.f, 765.f, 32.f, 32.f, 250.f);
 }
 
 void vtc::Step()

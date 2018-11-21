@@ -5,7 +5,6 @@
 namespace Vetche2D {
 	Entity::Entity()
 	{
-		game->console.Log("Entity initialized!", this);
 		game->getWorld().SpawnEntity(this); 
 		SetName("Entity");
 	}
@@ -15,13 +14,12 @@ namespace Vetche2D {
 		pos.x = x;
 		pos.y = y;
 		SetName(name);
-		game->console.Log("Entity initialized!", this);
 		game->getWorld().SpawnEntity(this);
 	}
 
 	Entity::~Entity()
 	{
-		std::cout << m_InheritedNames.back() + " cleared from memory address " << this << std::endl;
+		game->console.Log(m_InheritedNames.back() + " cleared from memory address ", this);
 	}
 
 	void Entity::Update()
@@ -41,10 +39,6 @@ namespace Vetche2D {
 
 	void Entity::SetName(const std::string & name)
 	{
-		if (m_InheritedNames.size() > 0)
-		{
-			game->console.Log(name + " inherited from " + m_InheritedNames.back(), this);
-		}
 		m_InheritedNames.push_back(name);
 	}
 
@@ -76,7 +70,10 @@ namespace Vetche2D {
 
 	void Entity::CallEvent(const std::string & eventType)
 	{
-		game->console.Log(m_InheritedNames.back() + " event '" + eventType + "' called ", this);
+		game->console.Log(m_InheritedNames.back() + " event '" + eventType + 
+		"' called at position " + 
+			std::to_string(int(pos.x)) + "," + 
+			std::to_string(int(pos.y)), this);
 		for (auto e : m_Events[eventType])
 		{
 			e();
