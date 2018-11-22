@@ -27,15 +27,6 @@ namespace Vetche2D {
 		ent_list.push_back(ent);
 	}
 
-	Entity * World::getEntity(unsigned int i)
-	{
-		if (i < (unsigned int)ent_list.size())
-		{
-			return ent_list[i];
-		}
-		std::cout << "Entity not found" << std::endl;
-		return nullptr;
-	}
 	void World::ClearEntity(unsigned int i)
 	{
 		if (i < (unsigned int)ent_list.size())
