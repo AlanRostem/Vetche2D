@@ -138,6 +138,7 @@
     <ClInclude Include="EventTypeList" />
     <ClInclude Include="src\Casting.h" />
     <ClInclude Include="src\Character.h" />
+    <ClInclude Include="src\Gamemode.h" />
     <ClInclude Include="src\InputMapper.h" />
     <ClInclude Include="src\Logger.h" />
     <ClInclude Include="src\PhysicsObject.h" />
@@ -150,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Character.cpp" />
+    <ClCompile Include="src\Gamemode.cpp" />
     <ClCompile Include="src\InputMapper.cpp" />
     <ClCompile Include="src\Logger.cpp" />
     <ClCompile Include="src\PhysicsObject.cpp" />

@@ -53,7 +53,6 @@ namespace Vetche2D {
 
 	private:
 		bool m_toRemove = false;
-		std::string m_Name;
 		std::vector<std::string> m_InheritedNames;
 		std::vector<std::function<void()>> m_AdditionalUpdates;
 		std::map<std::string, std::vector<std::function<void()>>> m_Events;

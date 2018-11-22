@@ -44,7 +44,11 @@ namespace Vetche2D {
 
 	std::string Entity::getName()
 	{
-		return m_Name;
+		if (m_InheritedNames.size() > 0)
+		{
+			return m_InheritedNames.back();
+		}
+		return "Empty";
 	}
 
 	bool Entity::toRemove()

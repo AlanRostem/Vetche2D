@@ -11,7 +11,6 @@ namespace Vetche2D {
 	public:
 		Game();
 		~Game();
-
 		sf::RenderWindow &getWindow();
 		World &getWorld();
 
