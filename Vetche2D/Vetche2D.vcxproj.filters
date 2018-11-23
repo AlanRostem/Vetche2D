@@ -57,6 +57,12 @@
     <ClInclude Include="Asset.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Asset.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AssetManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Entity.cpp">
@@ -97,6 +103,12 @@
     </ClCompile>
     <ClCompile Include="Asset.cpp">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Asset.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AssetManager.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
