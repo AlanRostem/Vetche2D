@@ -54,6 +54,9 @@
     <ClInclude Include="src\Gamemode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Asset.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Entity.cpp">
@@ -91,6 +94,9 @@
     </ClCompile>
     <ClCompile Include="src\Gamemode.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Asset.cpp">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

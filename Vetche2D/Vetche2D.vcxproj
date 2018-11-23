@@ -135,6 +135,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Asset.h" />
     <ClInclude Include="EventTypeList" />
     <ClInclude Include="src\Casting.h" />
     <ClInclude Include="src\Character.h" />
@@ -150,6 +151,7 @@
     <ClInclude Include="src\VMath.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Asset.cpp" />
     <ClCompile Include="src\Character.cpp" />
     <ClCompile Include="src\Gamemode.cpp" />
     <ClCompile Include="src\InputMapper.cpp" />
