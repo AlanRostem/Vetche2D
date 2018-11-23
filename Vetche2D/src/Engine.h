@@ -3,5 +3,5 @@
 namespace Vetche2D {
 	void Print();
 	extern void Step();
-	extern void Setup();
+	extern void Draw();
 }

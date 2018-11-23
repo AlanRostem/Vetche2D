@@ -1,5 +1,5 @@
 
-Character event 'ondamage' called at position 65,55 - memory address: 0BE60068
-Character event 'onremoval' called at position 65,55 - memory address: 0BE60068
-Character event 'ondead' called at position 65,55 - memory address: 0BE60068
-Character cleared from memory address  - memory address: 0BE60068
+Character event 'ondamage' called at position 65,55 - memory address: 05089CC8
+Character event 'onremoval' called at position 65,55 - memory address: 05089CC8
+Character event 'ondead' called at position 65,55 - memory address: 05089CC8
+Character cleared from memory address  - memory address: 05089CC8

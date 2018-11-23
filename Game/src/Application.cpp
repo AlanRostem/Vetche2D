@@ -4,12 +4,6 @@
 vtc::Character * e;
 vtc::Character * e1;
 
-void vtc::Setup()
-{
-	e = new vtc::Character(65.f, 55.f, 32.f, 32.f, 100.f);
-	e1 = new vtc::Character(234.f, 765.f, 32.f, 32.f, 250.f);
-}
-
 void vtc::Step()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
@@ -21,8 +15,14 @@ void vtc::Step()
 	}
 }
 
+void vtc::Draw()
+{
+
+}
+
 int main()
 {
-	vtc::Setup();
+	e = new vtc::Character(65.f, 55.f, 32.f, 32.f, 100.f);
+	e1 = new vtc::Character(234.f, 765.f, 32.f, 32.f, 250.f);
 	vtc::game->Update();
 }

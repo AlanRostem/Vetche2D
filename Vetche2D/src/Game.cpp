@@ -37,10 +37,11 @@ void Vetche2D::Game::Update()
 		Vetche2D::Step();
 		m_Window.clear();
 		ComposeFrame();
+		Vetche2D::Draw();
 		m_Window.display();
 		if (killApplication)
 		{
-			m_Window.close();
+			m_Window.close(); 
 			delete this;
 			break;
 		}
