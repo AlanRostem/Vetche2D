@@ -135,7 +135,6 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Asset.h" />
     <ClInclude Include="EventTypeList" />
     <ClInclude Include="src\Asset.h" />
     <ClInclude Include="src\AssetManager.h" />
@@ -153,7 +152,6 @@
     <ClInclude Include="src\VMath.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Asset.cpp" />
     <ClCompile Include="src\Asset.cpp" />
     <ClCompile Include="src\AssetManager.cpp" />
     <ClCompile Include="src\Character.cpp" />

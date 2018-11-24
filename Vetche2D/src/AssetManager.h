@@ -17,7 +17,7 @@ namespace Vetche2D {
 
 		static void AddAssetPrefixToList(const std::string & prefix);
 	private:
-		std::map<std::string, class Asset*,> m_AssetList;
-		static std::vector<std::string> m_AssetTypePrefices;
+		std::map<std::string, class Asset*> m_AssetList;
+		static std::vector<std::string> s_AssetTypePrefices;
 	};
 }

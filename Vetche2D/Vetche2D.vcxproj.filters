@@ -54,9 +54,6 @@
     <ClInclude Include="src\Gamemode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Asset.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Asset.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -101,13 +98,10 @@
     <ClCompile Include="src\Gamemode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Asset.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Asset.cpp">
+    <ClCompile Include="src\AssetManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\AssetManager.cpp">
+    <ClCompile Include="src\Asset.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

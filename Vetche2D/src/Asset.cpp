@@ -12,5 +12,10 @@ Vetche2D::Asset::~Asset()
 
 std::string & Vetche2D::Asset::getName()
 {
-	return m_AssetTypePrefix + "_" + m_Name;
+	return m_Name;
+}
+
+void Vetche2D::Asset::giveName(const std::string & Name)
+{
+	m_Name = m_AssetTypePrefix + "_" + Name;
 }

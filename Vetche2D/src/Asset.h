@@ -12,6 +12,7 @@ namespace Vetche2D {
 		Asset(const std::string &AssetTypePrefix);
 		~Asset();
 		std::string &getName();
+		void giveName(const std::string &Name);
 	protected:
 		std::string m_Name;
 	private:
