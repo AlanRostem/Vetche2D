@@ -2,7 +2,7 @@
 
 Vetche2D::Game::Game()
 {
-	m_Window.create(sf::VideoMode(960, 640), "Codename: Rubigo", sf::Style::Close | sf::Style::Titlebar);
+	create(sf::VideoMode(960, 640), "Codename: Rubigo", sf::Style::Close | sf::Style::Titlebar);
 }
 
 Vetche2D::Game::~Game()
@@ -10,10 +10,6 @@ Vetche2D::Game::~Game()
 
 }
 
-sf::RenderWindow & Vetche2D::Game::getWindow()
-{
-	return m_Window;
-}
 
 Vetche2D::World & Vetche2D::Game::getWorld()
 {
@@ -22,10 +18,10 @@ Vetche2D::World & Vetche2D::Game::getWorld()
 
 void Vetche2D::Game::Update()
 {
-	while (m_Window.isOpen())
+	while (isOpen())
 	{
 		sf::Event event;
-		while (m_Window.pollEvent(event))
+		while (pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
 			{
@@ -35,13 +31,13 @@ void Vetche2D::Game::Update()
 		}
 		m_World.Update();
 		Vetche2D::Step();
-		m_Window.clear();
+		clear();
 		ComposeFrame();
 		Vetche2D::Draw();
-		m_Window.display();
+		display();
 		if (killApplication)
 		{
-			m_Window.close(); 
+			close(); 
 			delete this;
 			break;
 		}

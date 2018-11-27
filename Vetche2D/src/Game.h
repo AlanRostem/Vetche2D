@@ -7,20 +7,17 @@
 #include <functional>
 
 namespace Vetche2D {
-	class Game : public Logger, public AssetManager
+	class Game : public Logger, public AssetManager, public sf::RenderWindow
 	{
 	public:
 		Game();
 		~Game();
-		sf::RenderWindow &getWindow();
 		World &getWorld();
 
 		void Update();
 		void ComposeFrame();
 	private:
-		sf::RenderWindow m_Window;
 		World m_World;
 		bool killApplication = false;
 	};
-
 }
