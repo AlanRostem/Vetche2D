@@ -7,7 +7,7 @@
 #include <functional>
 
 namespace Vetche2D {
-	class Game
+	class Game : public Logger, public AssetManager
 	{
 	public:
 		Game();
@@ -17,11 +17,9 @@ namespace Vetche2D {
 
 		void Update();
 		void ComposeFrame();
-		Logger console;
 	private:
 		sf::RenderWindow m_Window;
 		World m_World;
-		AssetManager m_AssetManager;
 		bool killApplication = false;
 	};
 

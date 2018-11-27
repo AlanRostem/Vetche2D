@@ -19,7 +19,7 @@ namespace Vetche2D {
 
 	Entity::~Entity()
 	{
-		game->console.Log(m_InheritedNames.back() + " cleared from memory address ", this);
+		game->Log(m_InheritedNames.back() + " cleared from memory address ", this);
 	}
 
 	void Entity::Update()
@@ -74,7 +74,7 @@ namespace Vetche2D {
 
 	void Entity::CallEvent(const std::string & eventType)
 	{
-		game->console.Log(m_InheritedNames.back() + " event '" + eventType + 
+		game->Log(m_InheritedNames.back() + " event '" + eventType + 
 		"' called at position " + 
 			std::to_string(int(pos.x)) + "," + 
 			std::to_string(int(pos.y)), this);
