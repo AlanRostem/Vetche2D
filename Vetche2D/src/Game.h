@@ -16,6 +16,7 @@ namespace Vetche2D {
 
 		void Update();
 		void ComposeFrame();
+		sf::View m_Camera;
 	private:
 		World m_World;
 		bool killApplication = false;

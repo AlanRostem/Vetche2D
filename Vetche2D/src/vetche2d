@@ -3,6 +3,7 @@
 #include "Game.h"
 #include "Entity.h"
 #include "Character.h"
+#include "Spritemap.h"
 #include "Initialize.h"
 
 namespace vtc = Vetche2D;

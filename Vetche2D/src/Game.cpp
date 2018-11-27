@@ -1,15 +1,15 @@
 #include "Game.h"
 
-Vetche2D::Game::Game()
+Vetche2D::Game::Game() : m_Camera(sf::View(sf::FloatRect(0, 0, getSize().x, getSize().y)))
 {
 	create(sf::VideoMode(960, 640), "Codename: Rubigo", sf::Style::Close | sf::Style::Titlebar);
+
 }
 
 Vetche2D::Game::~Game()
 {
 
 }
-
 
 Vetche2D::World & Vetche2D::Game::getWorld()
 {

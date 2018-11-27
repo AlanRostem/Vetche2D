@@ -145,6 +145,7 @@
     <ClInclude Include="src\Logger.h" />
     <ClInclude Include="src\PhysicsObject.h" />
     <ClInclude Include="src\Engine.h" />
+    <ClInclude Include="src\Spritemap.h" />
     <ClInclude Include="src\World.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\Entity.h" />
@@ -160,6 +161,7 @@
     <ClCompile Include="src\Logger.cpp" />
     <ClCompile Include="src\PhysicsObject.cpp" />
     <ClCompile Include="src\Engine.cpp" />
+    <ClCompile Include="src\Spritemap.cpp" />
     <ClCompile Include="src\World.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\Entity.cpp" />

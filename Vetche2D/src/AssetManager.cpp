@@ -18,7 +18,7 @@ void Vetche2D::AssetManager::CreateAsset(const std::string & name, Asset * asset
 	m_AssetList[name]->giveName(name);
 }
 
-void Vetche2D::AssetManager::LoadAssetsFromScript(const std::string & file_path)
+void Vetche2D::AssetManager::LoadAssetsFromVAsset(const std::string & file_path)
 {
 	//TODO: Add a file parsing method for the .assetscript files. 
 }
