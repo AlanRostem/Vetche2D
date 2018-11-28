@@ -7,6 +7,7 @@ vtc::Spritemap * sprt;
 
 void vtc::Step()
 {
+	game->QuickLog("DeltaTime: " + std::to_string(game->getDeltaTime()));
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 	{
 		game->m_Camera.move(0.1f, 0.1f);

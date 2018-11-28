@@ -16,9 +16,13 @@ namespace Vetche2D {
 
 		void Update();
 		void ComposeFrame();
+		float getDeltaTime();
+
 		sf::View m_Camera;
 	private:
 		World m_World;
+		sf::Clock m_Clock;
+		sf::Time m_DeltaTime;
 		bool killApplication = false;
 	};
 }

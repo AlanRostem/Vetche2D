@@ -7,17 +7,23 @@
 namespace Vetche2D {
 	//Animation struct that can be created like: Animation a = {0, 1, 2, 3};
 	struct Animation {
+		Animation(int startColumn, int endColumn, int preferredRow, float frameSpeedSeconds)
+			: start_col(startColumn), end_col(endColumn), pref_row(preferredRow), frame_speed(frameSpeedSeconds)
+		{
+
+		}
 		//Initializable values
-		int start_col;
-		int end_col;
-		int pref_row;
-		int frame_speed;
+		int start_col; //Start of row
+		int end_col; //End of row
+		int pref_row; //Preferred row to be animated
+		float frame_speed; //Frame speed in seconds
 
 		//Non-init values
 		int current_col = start_col;
 		int current_row = 0;
 		int passed_time = 0;
 		bool stop = false;
+		bool reverse = false;
 	};
 
 	//A rectangle to be used as a definitive position on the sprite sheet

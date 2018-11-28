@@ -29,6 +29,7 @@ void Vetche2D::Game::Update()
 				break;
 			}
 		}
+		m_DeltaTime = m_Clock.restart();
 		m_World.Update();
 		Vetche2D::Step();
 		clear();
@@ -47,4 +48,9 @@ void Vetche2D::Game::Update()
 void Vetche2D::Game::ComposeFrame()
 {
 
+}
+
+float Vetche2D::Game::getDeltaTime()
+{
+	return m_DeltaTime.asSeconds();
 }

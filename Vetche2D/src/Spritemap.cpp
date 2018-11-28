@@ -20,7 +20,7 @@ void Vetche2D::Spritemap::BindSprite(const std::string& name, float offsetX, flo
 	cropRects[name] = OffsetRect(offsetX, offsetY, frame_width, frame_height);
 }
 
-void Vetche2D::Spritemap::Animate(const std::string&name, Animation &anim)
+void Vetche2D::Spritemap::Animate(const std::string &name, Animation &anim)
 {
 	anim.passed_time++;
 	if (anim.passed_time >= anim.frame_speed)
@@ -42,7 +42,7 @@ void Vetche2D::Spritemap::Animate(const std::string&name, Animation &anim)
 void Vetche2D::Spritemap::Draw(const std::string&name, float x, float y)
 {
 	sprite.setTextureRect(cropRects[name].rect); //Crops the image to the rect
-	sprite.setPosition(x , y );
+	sprite.setPosition(x, y);
 	game->draw(sprite);
 }
 
@@ -50,7 +50,7 @@ void Vetche2D::Spritemap::Draw(const std::string&name, float angle, float x, flo
 {
 	sprite.setTextureRect(cropRects[name].rect);
 	sprite.setPosition(x , y );
-	sprite.setRotation(angle*180/PI); //Rotation must be converted to degrees
+	sprite.setRotation(angle * 180 / PI); //Rotation must be converted to degrees
 	game->draw(sprite);
 	sprite.setRotation(0); //Resets the rotation after it's drawn each frame in the game
 }
@@ -58,7 +58,7 @@ void Vetche2D::Spritemap::Draw(const std::string&name, float angle, float x, flo
 void Vetche2D::Spritemap::Draw(const std::string&name, float angle, float facX, float facY, float x, float y)
 {
 	sprite.setTextureRect(cropRects[name].rect);
-	sprite.setPosition(x , y );
+	sprite.setPosition(x, y);
 	sprite.setRotation(angle * 180 / PI);
 	sprite.setScale(facX, facY);
 	game->draw(sprite);
