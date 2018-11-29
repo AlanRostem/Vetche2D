@@ -37,6 +37,14 @@ namespace Vetche2D {
 		}
 	}
 
+	void Entity::Draw()
+	{
+		for (auto f : m_DrawFunctions)
+		{
+			f();
+		}
+	}
+
 	void Entity::SetName(const std::string & name)
 	{
 		m_InheritedNames.push_back(name);
@@ -65,6 +73,11 @@ namespace Vetche2D {
 	void Entity::AddUpdate(std::function<void()> lambda)
 	{
 		m_AdditionalUpdates.push_back(lambda);
+	}
+
+	void Entity::AddDrawFunction(std::function<void()> lambda)
+	{
+		m_DrawFunctions.push_back(lambda);
 	}
 
 	void Entity::AddEventListener(const std::string & eventType, std::function<void()> lambda)

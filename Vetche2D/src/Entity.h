@@ -18,6 +18,7 @@ namespace Vetche2D {
 		Entity(const char * name, float x, float y);
 		~Entity();
 		void Update();
+		void Draw();
 		bool toRemove();
 		std::string getName();
 	protected:
@@ -31,6 +32,7 @@ namespace Vetche2D {
 		// Function called upon constructing a character. Define a lambda function within this to implement
 		// additional algorithms to be updated in other inherited classes
 		void AddUpdate(std::function <void()> lambda);
+		void AddDrawFunction(std::function <void()> lambda);
 
 		// Map a string to a function that is called upon certain events. 
 		// Different event types can be found on the documentation.
@@ -55,6 +57,7 @@ namespace Vetche2D {
 		bool m_toRemove = false;
 		std::vector<std::string> m_InheritedNames;
 		std::vector<std::function<void()>> m_AdditionalUpdates;
+		std::vector<std::function<void()>> m_DrawFunctions;
 		std::map<std::string, std::vector<std::function<void()>>> m_Events;
 		std::vector<std::function<void(Entity* const &ent)>> m_EntityOperations;
 	};

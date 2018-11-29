@@ -17,7 +17,6 @@ void vtc::Step()
 		game->m_Camera.move(0.1f, 0.1f);
 		if (e != nullptr)
 		{
-
 			e->Damage(100.f);
 		}
 	}

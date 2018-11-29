@@ -2,7 +2,7 @@
 
 Vetche2D::Game::Game() : m_Camera(sf::View(sf::FloatRect(0, 0, getSize().x, getSize().y)))
 {
-	create(sf::VideoMode(960, 640), "Codename: Rubigo", sf::Style::Close | sf::Style::Titlebar);
+	create(sf::VideoMode(960, 640), "Unnamed application", sf::Style::Close | sf::Style::Titlebar);
 
 }
 
@@ -36,6 +36,7 @@ void Vetche2D::Game::Update()
 		ComposeFrame();
 		Vetche2D::Draw();
 		display();
+		setFramerateLimit(60);
 		if (killApplication)
 		{
 			close(); 

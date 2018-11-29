@@ -13,7 +13,6 @@ namespace Vetche2D {
 		Game();
 		~Game();
 		World &getWorld();
-
 		void Update();
 		void ComposeFrame();
 		float getDeltaTime();
@@ -23,6 +22,7 @@ namespace Vetche2D {
 		World m_World;
 		sf::Clock m_Clock;
 		sf::Time m_DeltaTime;
+		std::string m_WindowName = "Unnamed application";
 		bool killApplication = false;
 	};
 }

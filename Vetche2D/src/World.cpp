@@ -22,6 +22,10 @@ namespace Vetche2D {
 		}
 	}
 
+	void World::Draw()
+	{
+	}
+
 	void World::SpawnEntity(Entity * ent)
 	{
 		ent_list.push_back(ent);
