@@ -22,7 +22,7 @@ void Vetche2D::Spritemap::BindSprite(const std::string& name, float offsetX, flo
 
 void Vetche2D::Spritemap::Animate(const std::string &name, Animation &anim)
 {
-	anim.passed_time++;
+	anim.passed_time += game->getDeltaTime();
 	if (anim.passed_time >= anim.frame_speed)
 	{
 		if (anim.current_col < anim.end_col)

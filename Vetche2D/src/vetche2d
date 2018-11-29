@@ -2,6 +2,7 @@
 #include "VMath.h"
 #include "Game.h"
 #include "Entity.h"
+#include "Casting.h"
 #include "Character.h"
 #include "Spritemap.h"
 #include "Initialize.h"

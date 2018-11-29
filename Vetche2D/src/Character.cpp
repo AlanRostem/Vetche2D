@@ -18,7 +18,6 @@ Vetche2D::Character::Character(float x, float y, float width, float height, floa
 		if (IsType<Entity, Character>(e))
 		{
 			Character* c = CastTo<Entity, Character>(e);
-			game->QuickLog(c->HP());
 		}
 	});
 }

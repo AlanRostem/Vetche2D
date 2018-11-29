@@ -1,5 +1,6 @@
 
-Character event 'ondamage' called at position 65,55 - memory address: 0BF3A678
-Character event 'onremoval' called at position 65,55 - memory address: 0BF3A678
-Character event 'ondead' called at position 65,55 - memory address: 0BF3A678
-Character cleared from memory address  - memory address: 0BF3A678
+Cast result: 1
+Character event 'ondamage' called at position 65,55 - memory address: 03DDDCE0
+Character event 'onremoval' called at position 65,55 - memory address: 03DDDCE0
+Character event 'ondead' called at position 65,55 - memory address: 03DDDCE0
+Character cleared from memory address  - memory address: 03DDDCE0

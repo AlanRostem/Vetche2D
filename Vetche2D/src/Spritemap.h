@@ -21,7 +21,7 @@ namespace Vetche2D {
 		//Non-init values
 		int current_col = start_col;
 		int current_row = 0;
-		int passed_time = 0;
+		float passed_time = 0;
 		bool stop = false;
 		bool reverse = false;
 	};
