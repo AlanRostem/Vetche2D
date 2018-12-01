@@ -2,7 +2,8 @@
 #include "Engine.h"
 
 namespace Vetche2D {
-	typedef unsigned short int Sint16;
+	typedef unsigned short int uint16;
+	typedef short int int16;
 
 	constexpr float PI = 3.14159f;
 
