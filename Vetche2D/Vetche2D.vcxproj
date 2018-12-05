@@ -169,6 +169,9 @@
     <ClCompile Include="src\VMath.cpp" />
     <ClCompile Include="src\vetche2d" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="..\..\..\Users\ALANRO~1\AppData\Local\Temp\Rar$DRa24140.17927\abel-regular.ttf" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

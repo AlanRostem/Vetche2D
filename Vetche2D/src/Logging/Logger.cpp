@@ -1,11 +1,14 @@
 #include "Logger.h"
-#include <sstream>
 #include <fstream>
 #include "Game.h"
+#include "Initialize.h"
 
 Vetche2D::Logger::Logger()
+	: m_DispTxt(sf::Text("", m_DefaultFont, m_CharSize))
 {
-
+	m_DefaultFont.loadFromFile("../Vetche2D/res/fonts/default.ttf");
+	m_DispTxt.setFillColor(sf::Color(0, 150, 255));
+	m_DispTxt.setFont(m_DefaultFont);
 }
 
 Vetche2D::Logger::~Logger()
@@ -18,7 +21,6 @@ Vetche2D::Logger::~Logger()
 
 void Vetche2D::Logger::Log(const std::string & log, void* memoryLocation)
 {
-	std::stringstream stream;
 	stream << std::hex << memoryLocation;
 	std::string result(stream.str());
 
@@ -37,6 +39,9 @@ void Vetche2D::Logger::Log(const std::string & log)
 void Vetche2D::Logger::QuickLog(const std::string & log)
 {
 	std::cout << "QuickLog: " << log << "\r";
+	m_DispTxt.setString(log);
+	m_DispTxt.setPosition(50, 50);
+	game->draw(m_DispTxt);
 }
 
 void Vetche2D::Logger::QuickLog(int i)

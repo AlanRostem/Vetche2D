@@ -111,4 +111,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="..\..\..\Users\ALANRO~1\AppData\Local\Temp\Rar$DRa24140.17927\abel-regular.ttf" />
+  </ItemGroup>
 </Project>

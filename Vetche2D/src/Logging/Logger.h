@@ -1,7 +1,10 @@
 #pragma once
 #include "Engine.h"
+#include "VMath.h"
 #include <iostream>
 #include <string>
+#include <sstream>
+#include <SFML/Graphics.hpp>
 
 namespace Vetche2D {
 	class Logger
@@ -25,6 +28,10 @@ namespace Vetche2D {
 		void QuickLog(int i);
 		void QuickLog(float i);
 	private:
+		unsigned int m_CharSize = 20;
 		std::string m_Log;
+		sf::Font m_DefaultFont;
+		sf::Text m_DispTxt;
+		std::stringstream stream;
 	};
 }
