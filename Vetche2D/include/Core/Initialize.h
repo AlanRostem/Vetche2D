@@ -1,5 +1,5 @@
 #pragma once
-#include "Game.h"
+#include "../Game/Game.h"
 
 namespace Vetche2D {
 	extern Game* game;

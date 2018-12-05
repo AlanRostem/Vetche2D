@@ -1,8 +1,8 @@
 #pragma once
-#include "Engine.h"
+#include "../Core/Engine.h"
 #include "World.h"
-#include "Logger.h"
-#include "AssetManager.h"
+#include "../Logging/Logger.h"
+#include "../Asset/AssetManager.h"
 #include <SFML/Graphics.hpp>
 #include <functional>
 

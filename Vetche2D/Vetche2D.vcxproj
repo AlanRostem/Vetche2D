@@ -136,38 +136,38 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="EventTypeList" />
-    <ClInclude Include="src\Asset.h" />
-    <ClInclude Include="src\AssetManager.h" />
-    <ClInclude Include="src\Casting.h" />
-    <ClInclude Include="src\Character.h" />
-    <ClInclude Include="src\Gamemode.h" />
-    <ClInclude Include="src\InputMapper.h" />
-    <ClInclude Include="src\Logger.h" />
-    <ClInclude Include="src\PhysicsObject.h" />
-    <ClInclude Include="src\Engine.h" />
-    <ClInclude Include="src\Spritemap.h" />
-    <ClInclude Include="src\World.h" />
-    <ClInclude Include="src\Game.h" />
-    <ClInclude Include="src\Entity.h" />
-    <ClInclude Include="src\Initialize.h" />
-    <ClInclude Include="src\VMath.h" />
+    <ClInclude Include="include\Asset\Asset.h" />
+    <ClInclude Include="include\Asset\AssetManager.h" />
+    <ClInclude Include="include\Asset\Spritemap.h" />
+    <ClInclude Include="include\Core\Engine.h" />
+    <ClInclude Include="include\Core\Initialize.h" />
+    <ClInclude Include="include\Entity\Character.h" />
+    <ClInclude Include="include\Entity\Entity.h" />
+    <ClInclude Include="include\Entity\PhysicsObject.h" />
+    <ClInclude Include="include\Game\Game.h" />
+    <ClInclude Include="include\Game\Gamemode.h" />
+    <ClInclude Include="include\Game\World.h" />
+    <ClInclude Include="include\Input\InputMapper.h" />
+    <ClInclude Include="include\Logging\Logger.h" />
+    <ClInclude Include="include\Misc\Casting.h" />
+    <ClInclude Include="include\Misc\VMath.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Asset.cpp" />
-    <ClCompile Include="src\AssetManager.cpp" />
-    <ClCompile Include="src\Character.cpp" />
-    <ClCompile Include="src\Gamemode.cpp" />
-    <ClCompile Include="src\InputMapper.cpp" />
-    <ClCompile Include="src\Logger.cpp" />
-    <ClCompile Include="src\PhysicsObject.cpp" />
-    <ClCompile Include="src\Engine.cpp" />
-    <ClCompile Include="src\Spritemap.cpp" />
-    <ClCompile Include="src\World.cpp" />
-    <ClCompile Include="src\Game.cpp" />
-    <ClCompile Include="src\Entity.cpp" />
-    <ClCompile Include="src\Initialize.cpp" />
-    <ClCompile Include="src\VMath.cpp" />
-    <ClCompile Include="src\vetche2d" />
+    <ClCompile Include="include\Asset\Asset.cpp" />
+    <ClCompile Include="include\Asset\AssetManager.cpp" />
+    <ClCompile Include="include\Asset\Spritemap.cpp" />
+    <ClCompile Include="include\Core\Engine.cpp" />
+    <ClCompile Include="include\Core\Initialize.cpp" />
+    <ClCompile Include="include\Entity\Character.cpp" />
+    <ClCompile Include="include\Entity\Entity.cpp" />
+    <ClCompile Include="include\Entity\PhysicsObject.cpp" />
+    <ClCompile Include="include\Game\Game.cpp" />
+    <ClCompile Include="include\Game\Gamemode.cpp" />
+    <ClCompile Include="include\Game\World.cpp" />
+    <ClCompile Include="include\Input\InputMapper.cpp" />
+    <ClCompile Include="include\Logging\Logger.cpp" />
+    <ClCompile Include="include\Misc\VMath.cpp" />
+    <ClCompile Include="include\vetche2d.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="..\..\..\Users\ALANRO~1\AppData\Local\Temp\Rar$DRa24140.17927\abel-regular.ttf" />

@@ -1,5 +1,5 @@
 #include "Gamemode.h"
-#include "Initialize.h"
+#include "../Core/Initialize.h"
 
 Vetche2D::GameMode::GameMode()
 {

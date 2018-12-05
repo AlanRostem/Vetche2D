@@ -1,6 +1,5 @@
-#include "Engine.h"
+#include "../Core/Engine.h"
 #include <iostream>
-#include <SFML/Graphics.hpp>
 
 namespace Vetche2D {
 	void Print()

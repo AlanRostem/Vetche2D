@@ -1,4 +1,4 @@
-#include <vetche2d>
+#include <vetche2d.h>
 #include <iostream>
 
 vtc::Character * e;

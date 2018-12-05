@@ -1,6 +1,6 @@
 #include "Game.h"
 
-Vetche2D::Game::Game() : m_Camera(sf::View(sf::FloatRect(0, 0, getSize().x, getSize().y)))
+Vetche2D::Game::Game() : m_Camera(sf::View(sf::FloatRect(0, 0, (float)getSize().x, (float)getSize().y)))
 {
 	create(sf::VideoMode(960, 640), "Unnamed application", sf::Style::Close | sf::Style::Titlebar);
 

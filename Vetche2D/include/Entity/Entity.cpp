@@ -1,5 +1,5 @@
 #include "Entity.h"
-#include "Initialize.h"
+#include "../Core/Initialize.h"
 #include <iostream>
 
 namespace Vetche2D {

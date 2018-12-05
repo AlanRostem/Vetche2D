@@ -1,13 +1,12 @@
 #include "Spritemap.h"
-#include "Initialize.h"
-#include "VMath.h"
+#include "../Core/Initialize.h"
+#include "../Misc/VMath.h"
 
 Vetche2D::Spritemap::Spritemap(const std::string & file_path, const std::string & name)
-	: Asset("sprt")
+	: Asset("sprt"), sprite(sf::Sprite(texture))
 {
 	texture.loadFromFile(file_path);
 	giveName(name);
-	sprite = sf::Sprite(texture);
 }
 
 Vetche2D::Spritemap::~Spritemap()

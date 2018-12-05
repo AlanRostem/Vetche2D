@@ -1,6 +1,6 @@
 #pragma once
-#include "Engine.h"
-#include "VMath.h"
+#include "../Core/Engine.h"
+#include "../Misc/VMath.h"
 #include <string>
 #include <map>
 #include <vector>

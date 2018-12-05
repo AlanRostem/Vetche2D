@@ -1,5 +1,5 @@
 #include "World.h"
-#include "Entity.h"
+#include "../Entity/Entity.h"
 #include <iostream>
 
 namespace Vetche2D {

@@ -1,6 +1,6 @@
-#include "Character.h"
-#include "Initialize.h"
-#include "Casting.h"
+#include "../Entity/Character.h"
+#include "../Core/Initialize.h"
+#include "../Misc/Casting.h"
 
 Vetche2D::Character::Character(float x, float y, float width, float height, float maxHP)
 	: PhysicsObject(x, y, width, height), m_MaxHP(maxHP), m_CurrentHP(maxHP)

@@ -1,7 +1,7 @@
 #include "Logger.h"
 #include <fstream>
-#include "Game.h"
-#include "Initialize.h"
+#include "../Game/Game.h"
+#include "../Core/Initialize.h"
 
 Vetche2D::Logger::Logger()
 	: m_DispTxt(sf::Text("", m_DefaultFont, m_CharSize))
