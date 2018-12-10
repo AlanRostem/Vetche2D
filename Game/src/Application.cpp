@@ -9,16 +9,24 @@ vtc::Spritemap * sprt;
 vtc::Spritemap * plr;
 vtc::Animation plrAnim = vtc::Animation(0, 7, 0, 0.1f);
 
+int x = 0;
+
 void vtc::Step()
 {
 	//game->QuickLog("DeltaTime: " + std::to_string(game->getDeltaTime()));
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && x == 0)
 	{
 		game->m_Camera.move(0.1f, 0.1f);
 		if (e != nullptr)
 		{
 			e->Damage(100.f);
 		}
+		game->Log("------------------------------------------------------------------------------------------------------------------------------- Test! ----------------------------------------------------------------------------------------------------------------");
+		x++;
+	}
+	else
+	{
+		x = 0;
 	}
 }
 

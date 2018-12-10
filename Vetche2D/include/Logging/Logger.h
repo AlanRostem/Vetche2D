@@ -31,15 +31,25 @@ namespace Vetche2D {
 		void RefreshData();
 		void DrawText();
 		void AddStringToDisplay();
+		void SetWindowSizeValuesForView(int width, int height);
 	private:
+		void IncrementLineNumber();
+
 		unsigned int m_CharSize = 15u;
 		float m_TxtDisplayTime = 0.f;
 		float m_MaxTxtDisplaySeconds = 10.f;
 		float m_MaxTxtDisplayTime = 0.f;
 		unsigned int m_MaxCharactersPerDisplay = 60;
+		unsigned int m_NumberOfLines = 0;
+		unsigned int m_MaxNumberOfLinesPerDisplay;
+		sf::View m_ConsoleWindow;
 		std::string m_Log;
 		sf::Font m_DefaultFont;
 		sf::Text m_DispTxt;
+		std::string full_Log;
+
+		sf::Text m_FPS;
+		bool countFPS = true;
 		std::stringstream stream;
 	};
 }
