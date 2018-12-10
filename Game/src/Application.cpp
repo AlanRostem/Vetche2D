@@ -28,8 +28,6 @@ void vtc::Draw()
 	sprt->Draw("full", 0, 0.5 ,0.5, 200, 200);
 	plr->Animate("walk", plrAnim);
 	plr->Draw("walk", 350, 183);
-
-	game->QuickLog("Fagget!");
 }
 
 int main()

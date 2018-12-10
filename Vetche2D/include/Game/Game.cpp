@@ -32,9 +32,10 @@ void Vetche2D::Game::Update()
 		m_DeltaTime = m_Clock.restart();
 		m_World.Update();
 		Vetche2D::Step();
+		RefreshData();
 		clear();
-		ComposeFrame();
 		Vetche2D::Draw();
+		ComposeFrame();
 		display();
 		setFramerateLimit(60);
 		if (killApplication)
@@ -48,7 +49,7 @@ void Vetche2D::Game::Update()
 
 void Vetche2D::Game::ComposeFrame()
 {
-
+	DrawText();
 }
 
 float Vetche2D::Game::getDeltaTime()

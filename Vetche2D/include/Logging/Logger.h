@@ -27,8 +27,16 @@ namespace Vetche2D {
 		void QuickLog(const std::string & log);
 		void QuickLog(int i);
 		void QuickLog(float i);
+	protected:
+		void RefreshData();
+		void DrawText();
+		void AddStringToDisplay();
 	private:
-		unsigned int m_CharSize = 20;
+		unsigned int m_CharSize = 15u;
+		float m_TxtDisplayTime = 0.f;
+		float m_MaxTxtDisplaySeconds = 10.f;
+		float m_MaxTxtDisplayTime = 0.f;
+		unsigned int m_MaxCharactersPerDisplay = 60;
 		std::string m_Log;
 		sf::Font m_DefaultFont;
 		sf::Text m_DispTxt;
