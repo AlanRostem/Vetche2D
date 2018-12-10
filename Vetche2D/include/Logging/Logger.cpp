@@ -4,6 +4,10 @@
 #include "../Core/Initialize.h"
 #include "../Misc/Casting.h"
 
+unsigned int Vetche2D::Logger::m_NumberOfLines = 0;
+unsigned int Vetche2D::Logger::m_CharSize = 15u;
+sf::Font Vetche2D::Logger::m_DefaultFont;
+
 Vetche2D::Logger::Logger()
 	: m_DispTxt(sf::Text("", m_DefaultFont, m_CharSize)),
 	  m_FPS(sf::Text("", m_DefaultFont, m_CharSize))
@@ -17,8 +21,6 @@ Vetche2D::Logger::Logger()
 	m_FPS.setFillColor(sf::Color(0, 150, 255));
 	m_FPS.setFont(m_DefaultFont);
 	m_FPS.setPosition(20, 0);
-
-	m_MaxNumberOfLinesPerDisplay = 20;
 }
 
 Vetche2D::Logger::~Logger()
@@ -32,50 +34,12 @@ Vetche2D::Logger::~Logger()
 void Vetche2D::Logger::Log(const std::string & log, void* memoryLocation)
 {
 	stream << std::hex << memoryLocation;
-
-	full_Log = "\n\n" + log + " - memory address: " + stream.str();
-	IncrementLineNumber();
-	IncrementLineNumber();
-
-	if (full_Log.size() > m_MaxCharactersPerDisplay)
-	{
-		for (unsigned int i = m_MaxCharactersPerDisplay; i < full_Log.size(); i += m_MaxCharactersPerDisplay)
-		{
-			if (i > full_Log.size())
-			{
-				full_Log.insert(i - full_Log.size(), "\n");
-				IncrementLineNumber();
-				continue;
-			}
-			full_Log.insert(i, "\n");
-			IncrementLineNumber();
-		}
-	}
-
-	m_Log += full_Log;
-	AddStringToDisplay();
+	ConcatenateLog(log + " - memory address: " + stream.str());
 }
 
 void Vetche2D::Logger::Log(const std::string & log)
 {
-	full_Log = "\n\n" + log;
-	IncrementLineNumber();
-	IncrementLineNumber();
-	if (full_Log.size() > m_MaxCharactersPerDisplay)
-	{
-		for (unsigned int i = m_MaxCharactersPerDisplay; i < full_Log.size(); i += m_MaxCharactersPerDisplay)
-		{
-			IncrementLineNumber();
-			if (i > full_Log.size())
-			{
-				full_Log.insert(i - full_Log.size(), "\n");
-				continue;
-			}
-			full_Log.insert(i, "\n");
-		}
-	}
-	m_Log += full_Log;
-	AddStringToDisplay();
+	ConcatenateLog(log);
 }
 
 void Vetche2D::Logger::QuickLog(const std::string & log)
@@ -112,7 +76,10 @@ void Vetche2D::Logger::DrawText()
 	else
 	{
 		game->setView(m_ConsoleWindow);
-		game->draw(m_DispTxt);
+		for (auto i : m_LogInstances)
+		{
+			game->draw(i);
+		}
 		game->setView(game->getDefaultView());
 	}
 
@@ -141,7 +108,33 @@ void Vetche2D::Logger::IncrementLineNumber()
 	++m_NumberOfLines;
 	if (m_NumberOfLines >= m_MaxNumberOfLinesPerDisplay-1)
 	{
-		m_DispTxt.move(0, -(int)m_CharSize);
+		for (auto i : m_LogInstances)
+		{
+			i.move(0, -(int)m_CharSize);
+		}
 	}
 	//std::cout << m_NumberOfLines << std::endl;
+}
+
+void Vetche2D::Logger::ConcatenateLog(const std::string & log)
+{
+	full_Log = "\n\n" + log;
+	IncrementLineNumber();
+	IncrementLineNumber();
+	if (full_Log.size() > m_MaxCharactersPerDisplay)
+	{
+		for (unsigned int i = m_MaxCharactersPerDisplay; i < full_Log.size(); i += m_MaxCharactersPerDisplay)
+		{
+			IncrementLineNumber();
+			if (i > full_Log.size())
+			{
+				full_Log.insert(i - full_Log.size(), "\n");
+				continue;
+			}
+			full_Log.insert(i, "\n");
+		}
+	}
+	m_LogInstances.push_back(LogInstance(full_Log));
+	m_Log += full_Log;
+	AddStringToDisplay();
 }
