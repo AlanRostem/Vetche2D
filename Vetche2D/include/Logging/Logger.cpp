@@ -4,7 +4,7 @@
 #include "../Core/Initialize.h"
 #include "../Misc/Casting.h"
 
-unsigned int Vetche2D::Logger::m_NumberOfLines = 0;
+unsigned int Vetche2D::Logger::s_NumberOfLines = 0;
 unsigned int Vetche2D::Logger::m_CharSize = 15u;
 sf::Font Vetche2D::Logger::m_DefaultFont;
 
@@ -66,6 +66,20 @@ void Vetche2D::Logger::RefreshData()
 	}
 	m_MaxTxtDisplayTime = m_MaxTxtDisplaySeconds * (1/game->getDeltaTime());
 	m_TxtDisplayTime--;
+	if (m_LogInstances.size() > m_MaxLogInstances)
+	{
+		for (int i = 0; i <= m_MaxLogInstances * 2 / 3; i++)
+		{
+			m_LogInstances.erase(m_LogInstances.begin());
+		}
+	}
+	if (game->event.type == sf::Event::MouseWheelScrolled && m_TxtDisplayTime > 0)
+	{
+		for (auto &i : m_LogInstances)
+		{
+			i.move(0, -game->event.mouseWheelScroll.delta * 5);
+		}	
+	}
 }
 
 void Vetche2D::Logger::DrawText()
@@ -77,7 +91,7 @@ void Vetche2D::Logger::DrawText()
 	else
 	{
 		game->setView(m_ConsoleWindow);
-		for (auto i : m_LogInstances)
+		for (auto &i : m_LogInstances)
 		{
 			game->draw(i);
 		}
@@ -93,7 +107,6 @@ void Vetche2D::Logger::DrawText()
 
 void Vetche2D::Logger::AddStringToDisplay()
 {
-	m_DispTxt.setString(m_Log);
 	m_TxtDisplayTime = m_MaxTxtDisplayTime;
 }
 
@@ -106,16 +119,14 @@ void Vetche2D::Logger::SetWindowSizeValuesForView(int width, int height)
 
 void Vetche2D::Logger::IncrementLineNumber()
 {
-	++m_NumberOfLines;
-	if (m_NumberOfLines >= m_MaxNumberOfLinesPerDisplay)
+	s_NumberOfLines++;
+	if (s_NumberOfLines > m_MaxNumberOfLinesPerDisplay)
 	{
-		for (auto i : m_LogInstances)
+		for (auto &i : m_LogInstances)
 		{
-			i.move(0, - (int)m_CharSize);
-			std::cout << i.getPosition().x << "," << i.getPosition().y << std::endl;
+			i.move(0, -(int)m_CharSize);
 		}
 	}
-	//std::cout << m_NumberOfLines << std::endl;
 }
 
 void Vetche2D::Logger::ConcatenateLog(const std::string & log)
@@ -137,6 +148,7 @@ void Vetche2D::Logger::ConcatenateLog(const std::string & log)
 		}
 	}
 	m_LogInstances.push_back(LogInstance(full_Log));
+	std::cout << m_LogInstances.size() << std::endl;
 	m_Log += full_Log;
 	AddStringToDisplay();
 	full_Log = "";

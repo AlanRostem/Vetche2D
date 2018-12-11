@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <deque>
 #include <SFML/Graphics.hpp>
 
 namespace Vetche2D {
@@ -30,9 +31,9 @@ namespace Vetche2D {
 	protected:
 		void RefreshData();
 		void DrawText();
-		void AddStringToDisplay();
 		void SetWindowSizeValuesForView(int width, int height);
 	private:
+		void AddStringToDisplay();
 		void IncrementLineNumber();
 		void ConcatenateLog(const std::string &log);
 
@@ -41,17 +42,17 @@ namespace Vetche2D {
 		float m_MaxTxtDisplaySeconds = 10.f;
 		float m_MaxTxtDisplayTime = 0.f;
 		unsigned int m_MaxCharactersPerDisplay = 60;
-		static unsigned int m_NumberOfLines;
+		static unsigned int s_NumberOfLines;
 		unsigned int m_MaxNumberOfLinesPerDisplay = 20;
 		sf::View m_ConsoleWindow;
 		std::string m_Log;
 		static sf::Font m_DefaultFont;
 		sf::Text m_DispTxt;
 		std::string full_Log;
-		std::string m_DispSTR;
 
 		sf::Text m_FPS;
 		bool countFPS = true;
+		unsigned int m_MaxLogInstances = 150u;
 
 		struct LogInstance : public sf::Text {
 			LogInstance(const std::string &str) : m_Str(str),
@@ -60,16 +61,23 @@ namespace Vetche2D {
 				setString(m_Str);
 				X = 20;
 				Y = 0;
-				setPosition(20, m_CharSize * m_NumberOfLines);
+				setPosition(20, m_CharSize * s_NumberOfLines);
 				setFont(m_DefaultFont);
 				setFillColor(sf::Color(0, 150, 255));
+				for (int i = 0; i < m_Str.size(); i++)
+				{
+					if (m_Str[i] == '\n')
+					{
+						lines++;
+					}
+				}
 			}
 			float X, Y;
 			~LogInstance() {}
 			std::string m_Str;
-			unsigned int m_Idx;
+			unsigned int lines;
 		};
 
-		std::vector<LogInstance> m_LogInstances;
+		std::deque<LogInstance> m_LogInstances;
 	};
 }

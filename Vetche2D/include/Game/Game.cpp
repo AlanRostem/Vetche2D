@@ -21,7 +21,6 @@ void Vetche2D::Game::Update()
 {
 	while (isOpen())
 	{
-		sf::Event event;
 		while (pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
