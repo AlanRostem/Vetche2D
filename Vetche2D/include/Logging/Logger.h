@@ -58,10 +58,13 @@ namespace Vetche2D {
 				sf::Text("", m_DefaultFont, m_CharSize)
 			{
 				setString(m_Str);
+				X = 20;
+				Y = 0;
 				setPosition(20, m_CharSize * m_NumberOfLines);
 				setFont(m_DefaultFont);
 				setFillColor(sf::Color(0, 150, 255));
 			}
+			float X, Y;
 			~LogInstance() {}
 			std::string m_Str;
 			unsigned int m_Idx;

@@ -107,11 +107,12 @@ void Vetche2D::Logger::SetWindowSizeValuesForView(int width, int height)
 void Vetche2D::Logger::IncrementLineNumber()
 {
 	++m_NumberOfLines;
-	if (m_NumberOfLines >= m_MaxNumberOfLinesPerDisplay-1)
+	if (m_NumberOfLines >= m_MaxNumberOfLinesPerDisplay)
 	{
 		for (auto i : m_LogInstances)
 		{
-			i.move(0, -(int)m_CharSize);
+			i.move(0, - (int)m_CharSize);
+			std::cout << i.getPosition().x << "," << i.getPosition().y << std::endl;
 		}
 	}
 	//std::cout << m_NumberOfLines << std::endl;
