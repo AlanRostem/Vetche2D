@@ -13,10 +13,10 @@ namespace Vetche2D {
 
 		}
 		//Initializable values
-		int start_col; //Start of row
-		int end_col; //End of row
-		int pref_row; //Preferred row to be animated
-		float frame_speed; //Frame speed in seconds
+		const int start_col; //Start of row
+		const int end_col; //End of row
+		const int pref_row; //Preferred row to be animated
+		const float frame_speed; //Frame speed in seconds
 
 		//Non-init values
 		int current_col = start_col;

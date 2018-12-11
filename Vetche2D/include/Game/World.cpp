@@ -5,6 +5,7 @@
 namespace Vetche2D {
 	World::World()
 	{
+
 	}
 
 	World::~World()

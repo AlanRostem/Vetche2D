@@ -16,7 +16,7 @@ void vtc::Step()
 	//game->QuickLog("DeltaTime: " + std::to_string(game->getDeltaTime()));
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && x == 0)
 	{
-		game->m_Camera.move(0.1f, 0.1f);
+
 		if (e != nullptr)
 		{
 			e->Damage(100.f);

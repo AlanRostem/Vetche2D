@@ -33,6 +33,7 @@ Vetche2D::Logger::~Logger()
 
 void Vetche2D::Logger::Log(const std::string & log, void* memoryLocation)
 {
+	std::stringstream stream;
 	stream << std::hex << memoryLocation;
 	ConcatenateLog(log + " - memory address: " + stream.str());
 }
@@ -137,4 +138,5 @@ void Vetche2D::Logger::ConcatenateLog(const std::string & log)
 	m_LogInstances.push_back(LogInstance(full_Log));
 	m_Log += full_Log;
 	AddStringToDisplay();
+	full_Log = "";
 }

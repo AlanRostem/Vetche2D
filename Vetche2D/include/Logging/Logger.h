@@ -52,7 +52,6 @@ namespace Vetche2D {
 
 		sf::Text m_FPS;
 		bool countFPS = true;
-		std::stringstream stream;
 
 		struct LogInstance : public sf::Text {
 			LogInstance(const std::string &str) : m_Str(str),
