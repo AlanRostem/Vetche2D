@@ -6,7 +6,9 @@
 
 unsigned int Vetche2D::Logger::s_NumberOfLines = 0;
 unsigned int Vetche2D::Logger::m_CharSize = 15u;
+unsigned int Vetche2D::Logger::m_MaxNumberOfLinesPerDisplay = 20u;
 sf::Font Vetche2D::Logger::m_DefaultFont;
+std::deque<Vetche2D::Logger::LogInstance> Vetche2D::Logger::m_LogInstances;
 
 Vetche2D::Logger::Logger()
 	: m_DispTxt(sf::Text("", m_DefaultFont, m_CharSize)),
@@ -77,7 +79,7 @@ void Vetche2D::Logger::RefreshData()
 	{
 		for (auto &i : m_LogInstances)
 		{
-			i.move(0, -game->event.mouseWheelScroll.delta * 5);
+			i.move(0, game->event.mouseWheelScroll.delta * 5);
 		}	
 	}
 }
@@ -120,25 +122,21 @@ void Vetche2D::Logger::SetWindowSizeValuesForView(int width, int height)
 void Vetche2D::Logger::IncrementLineNumber()
 {
 	s_NumberOfLines++;
-	if (s_NumberOfLines > m_MaxNumberOfLinesPerDisplay)
+	int j = 0;
+	for (auto &i : m_LogInstances)
 	{
-		for (auto &i : m_LogInstances)
-		{
-			i.move(0, -(int)m_CharSize);
-		}
+		j++;
+		i.setPosition(i.X, i.Y - (int)m_CharSize * ((int)s_NumberOfLines - j));
 	}
 }
 
 void Vetche2D::Logger::ConcatenateLog(const std::string & log)
 {
 	full_Log = "\n\n" + log;
-	IncrementLineNumber();
-	IncrementLineNumber();
 	if (full_Log.size() > m_MaxCharactersPerDisplay)
 	{
 		for (unsigned int i = m_MaxCharactersPerDisplay; i < full_Log.size(); i += m_MaxCharactersPerDisplay)
 		{
-			IncrementLineNumber();
 			if (i > full_Log.size())
 			{
 				full_Log.insert(i - full_Log.size(), "\n");
@@ -148,7 +146,7 @@ void Vetche2D::Logger::ConcatenateLog(const std::string & log)
 		}
 	}
 	m_LogInstances.push_back(LogInstance(full_Log));
-	std::cout << m_LogInstances.size() << std::endl;
+	//std::cout << m_LogInstances.size() << std::endl;
 	m_Log += full_Log;
 	AddStringToDisplay();
 	full_Log = "";
