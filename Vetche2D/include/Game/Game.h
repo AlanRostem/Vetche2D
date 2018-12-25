@@ -23,6 +23,7 @@ namespace Vetche2D {
 		sf::Clock m_Clock;
 		sf::Time m_DeltaTime;
 		std::string m_WindowName = "Unnamed application";
+
 		bool killApplication = false;
 	};
 }

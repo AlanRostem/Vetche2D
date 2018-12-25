@@ -35,7 +35,7 @@ namespace Vetche2D {
 		{
 			rect = sf::IntRect(int(X), int(Y), width, height);
 		}
-		OffsetRect() {}
+		OffsetRect() : offsetX(0), offsetY(0), width(0), height(0) {}
 		~OffsetRect() {}
 		float offsetX, offsetY;
 		int width, height;
