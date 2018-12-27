@@ -142,6 +142,7 @@
     <ClInclude Include="include\Core\Engine.h" />
     <ClInclude Include="include\Core\Initialize.h" />
     <ClInclude Include="include\Entity\Character.h" />
+    <ClInclude Include="include\Entity\CollisionCell.h" />
     <ClInclude Include="include\Entity\Entity.h" />
     <ClInclude Include="include\Entity\PhysicsObject.h" />
     <ClInclude Include="include\Game\Game.h" />
@@ -159,6 +160,7 @@
     <ClCompile Include="include\Core\Engine.cpp" />
     <ClCompile Include="include\Core\Initialize.cpp" />
     <ClCompile Include="include\Entity\Character.cpp" />
+    <ClCompile Include="include\Entity\CollisionCell.cpp" />
     <ClCompile Include="include\Entity\Entity.cpp" />
     <ClCompile Include="include\Entity\PhysicsObject.cpp" />
     <ClCompile Include="include\Game\Game.cpp" />

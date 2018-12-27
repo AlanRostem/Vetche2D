@@ -4,11 +4,17 @@
 void Vetche2D::CollisonCell::AddEntity(Entity * const & ent)
 {
 	push_back(ent);
-	m_EntityIdentifiers[ent] = (unsigned int)size();
 }
 
 void Vetche2D::CollisonCell::RemoveEntity(Entity * const & ent)
 {
-	erase(begin() + m_EntityIdentifiers[ent]);
-	m_EntityIdentifiers.erase(ent);
+	for (size_t i = 0; i < size(); i++)
+	{
+		if ((*this)[i] == ent)
+		{
+			erase(begin() + i);
+			return;
+		}
+	}
+	game->Log("Failed to remove entity from cell!", this);
 }

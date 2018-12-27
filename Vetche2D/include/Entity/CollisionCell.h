@@ -12,8 +12,6 @@ namespace Vetche2D {
 		
 		void AddEntity(Entity * const &ent);
 		void RemoveEntity(Entity * const &ent);
-	private:
-		std::map<Entity *, unsigned int> m_EntityIdentifiers;
 	};
 
 }
