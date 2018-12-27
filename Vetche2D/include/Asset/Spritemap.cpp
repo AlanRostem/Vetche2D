@@ -81,9 +81,9 @@ void Vetche2D::Spritemap::Draw(const std::string&name, float angle, float facX, 
 void Vetche2D::Spritemap::DrawUpsideDown(const std::string&name, bool up, float angle, float facX, float facY, float x, float y)
 {
 	sprite.setTextureRect(cropRects[name].rect);
-	sprite.setRotation(angle * 180 / PI);
+	sprite.setRotation(angle * 180.f / PI);
 	sprite.setScale(facX, facY);
-	sprite.setOrigin(cropRects[name].rect.width / 2, cropRects[name].rect.height / 2);
+	sprite.setOrigin((float)cropRects[name].rect.width / 2.f, (float)cropRects[name].rect.height / 2.f);
 	if (up)
 	{
 		sprite.setScale(sprite.getScale().x, -sprite.getScale().y);
@@ -97,9 +97,9 @@ void Vetche2D::Spritemap::DrawUpsideDown(const std::string&name, bool up, float 
 void Vetche2D::Spritemap::DrawFlipped(const std::string&name, bool left, float angle, float facX, float facY, float x, float y)
 {
 	sprite.setTextureRect(cropRects[name].rect);
-	sprite.setRotation(angle * 180 / PI);
+	sprite.setRotation(angle * 180.f / PI);
 	sprite.setScale(facX, facY);
-	sprite.setOrigin(cropRects[name].rect.width / 2, cropRects[name].rect.height / 2);
+	sprite.setOrigin((float)cropRects[name].rect.width / 2.f, (float)cropRects[name].rect.height / 2.f);
 	if (left)
 	{
 		sprite.setScale(-sprite.getScale().x, sprite.getScale().y);

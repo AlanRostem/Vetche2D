@@ -7,7 +7,8 @@
 namespace Vetche2D {
 	World::World(int tileSize)
 		: COLLISION_CELL_SIZE(tileSize), 
-		  m_OutOfBoundsCell(new CollisionCell(unsigned int() - 1, unsigned int() - 1, COLLISION_CELL_SIZE, COLLISION_CELL_SIZE))
+		  m_OutOfBoundsCell(
+			  new CollisionCell(float(unsigned int()), float(unsigned int()), COLLISION_CELL_SIZE, COLLISION_CELL_SIZE))
 	{
 
 	}
@@ -51,9 +52,9 @@ namespace Vetche2D {
 	}
 	CollisionCell * const & World::GetCollisionCellAt(float x, float y)
 	{
-		int xx = x / game->getWorld().COLLISION_CELL_SIZE;
-		int yy = y / game->getWorld().COLLISION_CELL_SIZE;
-		if (xx < 0 || xx > m_CollCells[0].size() || yy < 0 || yy > m_CollCells.size())
+		int xx = (int)x / game->getWorld().COLLISION_CELL_SIZE;
+		int yy = (int)y / game->getWorld().COLLISION_CELL_SIZE;
+		if (xx < 0 || xx > (int)m_CollCells[0].size() || yy < 0 || yy >(int)m_CollCells.size())
 		{
 			return m_OutOfBoundsCell;
 		}

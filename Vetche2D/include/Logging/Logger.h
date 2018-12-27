@@ -60,11 +60,11 @@ namespace Vetche2D {
 			{
 				setString(m_Str);
 				X = 20;
-				Y = m_CharSize * s_NumberOfLines;
-				setPosition(20, m_CharSize * s_NumberOfLines);
+				Y = float(m_CharSize * s_NumberOfLines);
+				setPosition(20.f, (float)m_CharSize * (float)s_NumberOfLines);
 				setFont(m_DefaultFont);
 				setFillColor(sf::Color(0, 150, 255));
-				for (int i = 0; i < m_Str.size(); i++)
+				for (size_t i = 0; i < m_Str.size(); i++)
 				{
 					if (m_Str[i] == '\n')
 					{

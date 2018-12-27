@@ -21,7 +21,7 @@ void Vetche2D::CollisionCell::RemoveEntity(Entity * const & ent)
 			return;
 		}
 	}
-	game->Log("Failed to remove entity from cell!", this);
+	game->Log("Failed to remove entity from cell. Maybe the cell is empty.", this);
 }
 
 void Vetche2D::CollisionCell::Clear()

@@ -70,7 +70,7 @@ void Vetche2D::Logger::RefreshData()
 	m_TxtDisplayTime--;
 	if (m_LogInstances.size() > m_MaxLogInstances)
 	{
-		for (int i = 0; i <= m_MaxLogInstances * 2 / 3; i++)
+		for (unsigned int i = 0; i <= m_MaxLogInstances * 2 / 3; i++)
 		{
 			m_LogInstances.erase(m_LogInstances.begin());
 		}
@@ -115,8 +115,8 @@ void Vetche2D::Logger::AddStringToDisplay()
 void Vetche2D::Logger::SetWindowSizeValuesForView(int width, int height)
 {
 	m_ConsoleWindow = sf::View(
-		sf::FloatRect(0, 0, width, height));
-	m_ConsoleWindow.setViewport(sf::FloatRect(0, 0.4, 1, 1));
+		sf::FloatRect(0.f, 0.f, (float)width, (float)height));
+	m_ConsoleWindow.setViewport(sf::FloatRect(0.f, 0.4f, 1.f, 1.f));
 }
 
 void Vetche2D::Logger::IncrementLineNumber()
