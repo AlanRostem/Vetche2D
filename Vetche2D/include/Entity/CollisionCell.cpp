@@ -1,12 +1,17 @@
 #include "CollisionCell.h"
 #include "../Core/Initialize.h"
 
-void Vetche2D::CollisonCell::AddEntity(Entity * const & ent)
+Vetche2D::CollisionCell::CollisionCell(float x, float y, int Width, int Height)
+	: pos(x, y), width(Width), height(Height)
+{
+}
+
+void Vetche2D::CollisionCell::AddEntity(Entity * const & ent)
 {
 	push_back(ent);
 }
 
-void Vetche2D::CollisonCell::RemoveEntity(Entity * const & ent)
+void Vetche2D::CollisionCell::RemoveEntity(Entity * const & ent)
 {
 	for (size_t i = 0; i < size(); i++)
 	{
@@ -17,4 +22,9 @@ void Vetche2D::CollisonCell::RemoveEntity(Entity * const & ent)
 		}
 	}
 	game->Log("Failed to remove entity from cell!", this);
+}
+
+void Vetche2D::CollisionCell::Clear()
+{
+	clear();
 }

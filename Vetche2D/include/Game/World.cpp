@@ -1,9 +1,13 @@
 #include "World.h"
 #include "../Entity/Entity.h"
+#include "../Entity/CollisionCell.h"
+#include "../Core/Initialize.h"
 #include <iostream>
 
 namespace Vetche2D {
-	World::World()
+	World::World(int tileSize)
+		: COLLISION_CELL_SIZE(tileSize), 
+		  m_OutOfBoundsCell(new CollisionCell(unsigned int() - 1, unsigned int() - 1, COLLISION_CELL_SIZE, COLLISION_CELL_SIZE))
 	{
 
 	}
@@ -13,6 +17,7 @@ namespace Vetche2D {
 	}
 	void World::Update()
 	{
+		m_OutOfBoundsCell->Clear();
 		for (unsigned int i = 0; i < (unsigned int)ent_list.size(); i++) {
 			auto e = ent_list[i];
 			e->Update();
@@ -43,5 +48,15 @@ namespace Vetche2D {
 	std::vector<Entity*>& World::GetEntityList()
 	{
 		return ent_list;
+	}
+	CollisionCell * const & World::GetCollisionCellAt(float x, float y)
+	{
+		int xx = x / game->getWorld().COLLISION_CELL_SIZE;
+		int yy = y / game->getWorld().COLLISION_CELL_SIZE;
+		if (xx < 0 || xx > m_CollCells[0].size() || yy < 0 || yy > m_CollCells.size())
+		{
+			return m_OutOfBoundsCell;
+		}
+		return m_CollCells[yy][xx];
 	}
 }

@@ -1,7 +1,8 @@
 #include "Game.h"
 
 Vetche2D::Game::Game() : 
-	m_Camera(sf::View(sf::FloatRect(0, 0, (float)getSize().x, (float)getSize().y)))
+	m_Camera(sf::View(sf::FloatRect(0, 0, (float)getSize().x, (float)getSize().y))),
+	m_World(32)
 {
 	create(sf::VideoMode(960, 640), "Unnamed application", sf::Style::Close | sf::Style::Titlebar);
 	SetWindowSizeValuesForView(getSize().x, getSize().y);
