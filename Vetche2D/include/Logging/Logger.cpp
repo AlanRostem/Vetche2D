@@ -14,7 +14,9 @@ Vetche2D::Logger::Logger()
 	: m_DispTxt(sf::Text("", m_DefaultFont, m_CharSize)),
 	  m_FPS(sf::Text("", m_DefaultFont, m_CharSize))
 {
-	m_DefaultFont.loadFromFile("../Vetche2D/res/fonts/default.ttf");
+
+	//TODO: Fix the read access violation error
+	//m_DefaultFont.loadFromFile("../Vetche2D/res/fonts/default.ttf");
 
 	m_DispTxt.setFillColor(sf::Color(0, 150, 255));
 	m_DispTxt.setFont(m_DefaultFont);
