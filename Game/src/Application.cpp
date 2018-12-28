@@ -18,7 +18,6 @@ void vtc::Step()
 		if (e != NULL)
 		{
 			e->Damage(100.f);
-			game->Log("Saggy boobs!");
 		}
 	}
 }

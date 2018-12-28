@@ -3,11 +3,17 @@
 #include <SFML/Graphics.hpp>
 
 namespace Vetche2D {
+
+	// Static class used as a namespace for drawing objects to the screen quickly.
+	// Functions in this class must be called in Vetche2D::Draw or other Vetche2D
+	// objects in order to work. 
 	class gfx {
 	public:
 		gfx();
 		~gfx();
 
+		// Draws a rectangle on the screen. Works only when called in Vetche2D::Draw
+		// or other Vetche2D objects.
 		static void FillRect(float x, float y, int width, int height);
 
 		static void FillColor(const sf::Color &color);
