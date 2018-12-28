@@ -9,8 +9,8 @@
 namespace Vetche2D {
 	//WARNING: Initialize with "new Entity(parameters)" when you want to spawn the entity.
 	//Do the same with inherited classes: "new Inherited(parameters)"
-	//This class gets automatially allocated into the global game object as a pointer
-	//and MUST ALSO be defined as a pointer
+	//This class gets automatially pushed into the global game object as a pointer
+	//and MUST ALSO be defined as a pointer.
 	class Entity
 	{
 	public:
@@ -42,17 +42,18 @@ namespace Vetche2D {
 		// Add an operation that you want to be done with other exsisting entities
 		// This is called in the game loop. If you require certain members of inherited
 		// entities, make sure to do a dynamic cast to your object in order to perform
-		// your wanted calculations. Including Casting.h is recommended
+		// your wanted calculations. Casting.h is included in the main .h file.
 		void AddEntityOperation(std::function<void(Entity* const &ent)> lambda);
 
 	private:
-		virtual void Test() {}
-		// Calls all entity operations that were added
+		// Calls all entity operations that were added during abstraction.
+		// These are usually collision handling and/or other operations
+		// if the entity is a different kind (checked by casting)
 		void EntityOperations(Entity * const & ent);
 
 	protected:
 		Vector2D pos;
-
+		int width, height;
 	private:
 		bool m_toRemove = false;
 		std::vector<std::string> m_InheritedNames;
@@ -60,5 +61,8 @@ namespace Vetche2D {
 		std::vector<std::function<void()>> m_DrawFunctions;
 		std::map<std::string, std::vector<std::function<void()>>> m_Events;
 		std::vector<std::function<void(Entity* const &ent)>> m_EntityOperations;
+
+		// Exists only to enable the polymorphic class type. This function wont be used but must exist!
+		virtual void Polymorphic() {}
 	};
 }

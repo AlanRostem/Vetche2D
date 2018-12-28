@@ -2,7 +2,7 @@
 
 Vetche2D::Game::Game() : 
 	m_Camera(sf::View(sf::FloatRect(0, 0, (float)getSize().x, (float)getSize().y))),
-	m_World(32)
+	World(32*3, 32)
 {
 	create(sf::VideoMode(960, 640), "Unnamed application", sf::Style::Close | sf::Style::Titlebar);
 	SetWindowSizeValuesForView(getSize().x, getSize().y);
@@ -11,11 +11,6 @@ Vetche2D::Game::Game() :
 Vetche2D::Game::~Game()
 {
 
-}
-
-Vetche2D::World & Vetche2D::Game::getWorld()
-{
-	return m_World;
 }
 
 void Vetche2D::Game::Update()
@@ -30,15 +25,18 @@ void Vetche2D::Game::Update()
 				break;
 			}
 		}
-		m_DeltaTime = m_Clock.restart();
-		m_World.Update();
-		Vetche2D::Step();
-		RefreshData();
 
-		clear();
-		Vetche2D::Draw();
-		ComposeFrame();
-		display();
+		//Update world:
+		m_DeltaTime = m_Clock.restart();
+		UpdateScene(); //World function
+		Vetche2D::Step(); //Global definable
+		RefreshData(); //Logger function
+
+		//Rendering:
+		clear(); //Window function
+		Vetche2D::Draw(); //Global definable
+		ComposeFrame(); //Game function
+		display(); //Window function
 
 		setFramerateLimit(60);
 		if (killApplication)
@@ -58,4 +56,19 @@ void Vetche2D::Game::ComposeFrame()
 float Vetche2D::Game::getDeltaTime()
 {
 	return m_DeltaTime.asSeconds();
+}
+
+void Vetche2D::Game::SetWindow(int width, int height, const std::string& name)
+{
+	create(sf::VideoMode(width, height), name, sf::Style::Close | sf::Style::Titlebar);
+}
+
+void Vetche2D::Game::SetTileSize(int size)
+{
+	m_TileSize = size;
+}
+
+void Vetche2D::Game::SetCollisionCellSize(int size)
+{
+	m_CollisionCellSize = size;
 }

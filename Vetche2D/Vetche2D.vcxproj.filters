@@ -66,6 +66,9 @@
     <ClInclude Include="include\Entity\CollisionCell.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Misc\gfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\Asset\Asset.cpp">
@@ -114,6 +117,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="include\Entity\CollisionCell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\Misc\gfx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

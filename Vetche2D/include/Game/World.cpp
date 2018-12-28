@@ -5,10 +5,11 @@
 #include <iostream>
 
 namespace Vetche2D {
-	World::World(int tileSize)
-		: COLLISION_CELL_SIZE(tileSize), 
+	World::World(int collCellSize, int tileSize)
+		: m_CollisionCellSize(collCellSize), m_TileSize(tileSize),
 		  m_OutOfBoundsCell(
-			  new CollisionCell(float(unsigned int()), float(unsigned int()), COLLISION_CELL_SIZE, COLLISION_CELL_SIZE))
+			  new CollisionCell(float(unsigned int()), float(unsigned int()), 
+						collCellSize, collCellSize))
 	{
 
 	}
@@ -16,7 +17,8 @@ namespace Vetche2D {
 	World::~World()
 	{
 	}
-	void World::Update()
+
+	void World::UpdateScene()
 	{
 		m_OutOfBoundsCell->Clear();
 		for (unsigned int i = 0; i < (unsigned int)ent_list.size(); i++) {
@@ -29,8 +31,9 @@ namespace Vetche2D {
 		}
 	}
 
-	void World::Draw()
+	void World::DrawScene()
 	{
+		//TODO: Create an algorithm to render actors to scene
 	}
 
 	void World::SpawnEntity(Entity * ent)
@@ -44,20 +47,35 @@ namespace Vetche2D {
 		{
 			delete ent_list[i];
 			ent_list.erase(ent_list.begin() + i);
+			return;
 		}
+		game->Log("Failed to clear entity from world. Index: " + i);
 	}
+
+	//May get removed
 	std::vector<Entity*>& World::GetEntityList()
 	{
 		return ent_list;
 	}
+	
 	CollisionCell * const & World::GetCollisionCellAt(float x, float y)
 	{
-		int xx = (int)x / game->getWorld().COLLISION_CELL_SIZE;
-		int yy = (int)y / game->getWorld().COLLISION_CELL_SIZE;
-		if (xx < 0 || xx > (int)m_CollCells[0].size() || yy < 0 || yy >(int)m_CollCells.size())
+		int xx = (int)x / game->COLLISION_CELL_SIZE();
+		int yy = (int)y / game->COLLISION_CELL_SIZE();
+		if (xx < 0 || xx > (int)m_CollisionGrid[0].size() || yy < 0 || yy >(int)m_CollisionGrid.size())
 		{
 			return m_OutOfBoundsCell;
 		}
-		return m_CollCells[yy][xx];
+		return m_CollisionGrid[yy][xx];
+	}
+
+	int World::COLLISION_CELL_SIZE()
+	{
+		return 0;
+	}
+
+	int World::TILE_SIZE()
+	{
+		return m_TileSize;
 	}
 }

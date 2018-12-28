@@ -15,10 +15,10 @@ Vetche2D::Character::Character(float x, float y, float width, float height, floa
 	});
 
 	AddEntityOperation([&](Entity* const &e) {
-		if (IsType<Entity, Character>(e))
+		/*if (IsType<Entity, Character>(e))
 		{
 			Character* c = CastTo<Entity, Character>(e);
-		}
+		}*/
 	});
 }
 

@@ -151,6 +151,7 @@
     <ClInclude Include="include\Input\InputMapper.h" />
     <ClInclude Include="include\Logging\Logger.h" />
     <ClInclude Include="include\Misc\Casting.h" />
+    <ClInclude Include="include\Misc\gfx.h" />
     <ClInclude Include="include\Misc\VMath.h" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +169,7 @@
     <ClCompile Include="include\Game\World.cpp" />
     <ClCompile Include="include\Input\InputMapper.cpp" />
     <ClCompile Include="include\Logging\Logger.cpp" />
+    <ClCompile Include="include\Misc\gfx.cpp" />
     <ClCompile Include="include\Misc\VMath.cpp" />
     <ClCompile Include="include\vetche2d.h" />
   </ItemGroup>

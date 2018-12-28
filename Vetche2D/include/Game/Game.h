@@ -7,19 +7,30 @@
 #include <functional>
 
 namespace Vetche2D {
-	class Game : public Logger, public AssetManager, public sf::RenderWindow
+	class Game : public Logger, public AssetManager, public sf::RenderWindow, public World
 	{
 	public:
 		Game();
 		~Game();
-		World &getWorld();
+		//Public getters, setters and other callables:
+
 		void Update();
-		void ComposeFrame();
+		void ComposeFrame();	
 		float getDeltaTime();
+
+		//Initializers:
+		
+		void SetWindow(int width, int height, const std::string& name);
+		void SetTileSize(int size);
+		void SetCollisionCellSize(int size);
+
+		//Public object members:
+
 		sf::Event event;
 		sf::View m_Camera;
 	private:
-		World m_World;
+		//Data members 
+
 		sf::Clock m_Clock;
 		sf::Time m_DeltaTime;
 		std::string m_WindowName = "Unnamed application";

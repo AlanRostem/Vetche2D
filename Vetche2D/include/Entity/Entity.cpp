@@ -5,7 +5,7 @@
 namespace Vetche2D {
 	Entity::Entity()
 	{
-		game->getWorld().SpawnEntity(this); 
+		game->SpawnEntity(this); 
 		SetName("Entity");
 	}
 
@@ -14,7 +14,7 @@ namespace Vetche2D {
 		pos.x = x;
 		pos.y = y;
 		SetName(name);
-		game->getWorld().SpawnEntity(this);
+		game->SpawnEntity(this);
 	}
 
 	Entity::~Entity()
@@ -28,7 +28,9 @@ namespace Vetche2D {
 		{
 			a();
 		}
-		for (auto e : game->getWorld().GetEntityList())
+
+		//Temporary implementation
+		for (auto e : game->GetEntityList())
 		{
 			if (e != this)
 			{
