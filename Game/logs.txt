@@ -1,13 +1,13 @@
 
 
 Character event 'ondamage' called at position 65,55 - memo
-ry address: 0B6A49B8
+ry address: 0C19DD30
 
 Character event 'onremoval' called at position 65,55 - mem
-ory address: 0B6A49B8
+ory address: 0C19DD30
 
 Character event 'ondead' called at position 65,55 - memory
- address: 0B6A49B8
+ address: 0C19DD30
 
 Character cleared from memory address  - memory address: 0
-B6A49B8
+C19DD30

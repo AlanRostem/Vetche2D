@@ -7,23 +7,23 @@
 unsigned int Vetche2D::Logger::s_NumberOfLines = 0;
 unsigned int Vetche2D::Logger::m_CharSize = 15u;
 unsigned int Vetche2D::Logger::m_MaxNumberOfLinesPerDisplay = 20u;
-sf::Font Vetche2D::Logger::m_DefaultFont;
+sf::Font Vetche2D::Logger::DefaultFont;
 std::deque<Vetche2D::Logger::LogInstance> Vetche2D::Logger::m_LogInstances;
 
 Vetche2D::Logger::Logger()
-	: m_DispTxt(sf::Text("", m_DefaultFont, m_CharSize)),
-	  m_FPS(sf::Text("", m_DefaultFont, m_CharSize))
+	: m_DispTxt(sf::Text("", DefaultFont, m_CharSize)),
+	  m_FPS(sf::Text("", DefaultFont, m_CharSize))
 {
 
-	//TODO: Fix the read access violation error
+
 	//m_DefaultFont.loadFromFile("../Vetche2D/res/fonts/default.ttf");
 
 	m_DispTxt.setFillColor(sf::Color(0, 150, 255));
-	m_DispTxt.setFont(m_DefaultFont);
+	m_DispTxt.setFont(DefaultFont);
 	m_DispTxt.setPosition(20, 0);
 
 	m_FPS.setFillColor(sf::Color(0, 150, 255));
-	m_FPS.setFont(m_DefaultFont);
+	m_FPS.setFont(DefaultFont);
 	m_FPS.setPosition(20, 0);
 }
 

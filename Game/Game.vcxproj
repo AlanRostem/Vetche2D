@@ -129,11 +129,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="TestPlayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Vetche2D\Vetche2D.vcxproj">
       <Project>{e4ac4bbf-ec0f-4760-a1a9-07896fbf2074}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TestPlayer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

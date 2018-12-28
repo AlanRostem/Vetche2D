@@ -28,6 +28,7 @@ namespace Vetche2D {
 		void QuickLog(const std::string & log);
 		void QuickLog(int i);
 		void QuickLog(float i);
+		static sf::Font m_DefaultFont;
 	protected:
 		void RefreshData();
 		void DrawText();
@@ -46,7 +47,6 @@ namespace Vetche2D {
 		static unsigned int m_MaxNumberOfLinesPerDisplay;
 		sf::View m_ConsoleWindow;
 		std::string m_Log;
-		static sf::Font m_DefaultFont;
 		sf::Text m_DispTxt;
 		std::string full_Log;
 

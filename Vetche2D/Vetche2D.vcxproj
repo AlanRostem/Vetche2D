@@ -153,6 +153,7 @@
     <ClInclude Include="include\Misc\Casting.h" />
     <ClInclude Include="include\Misc\gfx.h" />
     <ClInclude Include="include\Misc\VMath.h" />
+    <ClInclude Include="include\vetchemain.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\Asset\Asset.cpp" />

@@ -6,6 +6,9 @@ namespace Vetche2D {
 	{
 		std::cout << "Systems operating!" << std::endl;
 	}
+	void Setup()
+	{
+	}
 	void Step()
 	{
 	}
