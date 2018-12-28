@@ -5,7 +5,7 @@
 namespace Vetche2D {
 	Entity::Entity()
 	{
-		game->SpawnEntity(this); 
+		//game->SpawnEntity(this); 
 		SetName("Entity");
 	}
 
@@ -14,7 +14,7 @@ namespace Vetche2D {
 		pos.x = x;
 		pos.y = y;
 		SetName(name);
-		game->SpawnEntity(this);
+		//game->SpawnEntity(this);
 	}
 
 	Entity::~Entity()
@@ -24,13 +24,13 @@ namespace Vetche2D {
 
 	void Entity::Update()
 	{
-		for (auto a : m_AdditionalUpdates)
+		for (auto &a : m_AdditionalUpdates)
 		{
 			a();
 		}
 
 		//Temporary implementation
-		for (auto e : game->GetEntityList())
+		for (auto &e : game->GetEntityList())
 		{
 			if (e != this)
 			{
@@ -41,7 +41,7 @@ namespace Vetche2D {
 
 	void Entity::Draw()
 	{
-		for (auto f : m_DrawFunctions)
+		for (auto &f : m_DrawFunctions)
 		{
 			f();
 		}

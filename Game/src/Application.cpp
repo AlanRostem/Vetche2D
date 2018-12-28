@@ -1,17 +1,26 @@
 #include <vetche2d.h>
+#include "../TestPlayer.h"
 
 vtc::Character * e;
 vtc::Character * e1;
+TestPlayer* tstPlr;
 
 vtc::Spritemap * sprt;
 
 vtc::Spritemap * plr;
 vtc::Animation plrAnim = vtc::Animation(0, 7, 0, 0.1f);
 
+
 void vtc::Setup()
 {
+
 	e = new vtc::Character(65.f, 55.f, 32.f, 32.f, 100.f);
 	e1 = new vtc::Character(234.f, 765.f, 32.f, 32.f, 250.f);
+	tstPlr = new TestPlayer();
+
+	game->SpawnEntity(e);
+	game->SpawnEntity(e1);
+	game->SpawnEntity(tstPlr);
 
 	sprt = new vtc::Spritemap("../Game/src/vetche.png", "vetcheLogo");
 	sprt->BindSprite("full", 0, 0, 1198, 380);

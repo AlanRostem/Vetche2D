@@ -33,7 +33,10 @@ namespace Vetche2D {
 
 	void World::DrawScene()
 	{
-		//TODO: Create an algorithm to render actors to scene
+		for (auto &e : ent_list)
+		{
+			e->Draw();
+		}
 	}
 
 	void World::SpawnEntity(Entity * ent)

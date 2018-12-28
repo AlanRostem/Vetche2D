@@ -50,6 +50,7 @@ void Vetche2D::Game::Update()
 
 void Vetche2D::Game::ComposeFrame()
 {
+	DrawScene();
 	DrawText();
 }
 
