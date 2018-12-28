@@ -28,7 +28,7 @@ namespace Vetche2D {
 		void QuickLog(const std::string & log);
 		void QuickLog(int i);
 		void QuickLog(float i);
-		static sf::Font m_DefaultFont;
+		static sf::Font DefaultFont;
 	protected:
 		void RefreshData();
 		void DrawText();
@@ -56,13 +56,13 @@ namespace Vetche2D {
 	public:
 		struct LogInstance : public sf::Text {
 			LogInstance(const std::string &str) : m_Str(str),
-				sf::Text("", m_DefaultFont, m_CharSize)
+				sf::Text("", DefaultFont, m_CharSize)
 			{
 				setString(m_Str);
 				X = 20;
 				Y = float(m_CharSize * s_NumberOfLines);
 				setPosition(20.f, (float)m_CharSize * (float)s_NumberOfLines);
-				setFont(m_DefaultFont);
+				setFont(DefaultFont);
 				setFillColor(sf::Color(0, 150, 255));
 				for (size_t i = 0; i < m_Str.size(); i++)
 				{
