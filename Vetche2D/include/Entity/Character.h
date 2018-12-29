@@ -6,7 +6,7 @@ namespace Vetche2D {
 	class Character : public PhysicsObject
 	{
 	public:
-		Character(float x, float y, float width, float height, float maxHP);
+		Character(float x, float y, int width, int height, float maxHP);
 		~Character();
 
 		float HP();

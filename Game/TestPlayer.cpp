@@ -14,13 +14,16 @@ TestPlayer::TestPlayer() : vtc::Character(0, 0, 32, 32, 100)
 
 	AddUpdate([&] {
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-			pos.y += *speed;
+			SetVelocity(GetVelocity().x, *speed);
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-			pos.y -= *speed;
+			SetVelocity(GetVelocity().x, -*speed);
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-			pos.x += *speed;
+			SetVelocity(*speed, GetVelocity().y);
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-			pos.x -= *speed;
+			SetVelocity(-*speed, GetVelocity().y);
+
+		if (GetPosition().y + height > vtc::game->getSize().y)
+			Place(GetPosition().x, vtc::game->getSize().y - height);
 	});
 }
 

@@ -21,9 +21,21 @@ namespace Vetche2D {
 		void Draw();
 		bool toRemove();
 		std::string getName();
+
+		// Move the object at a certain offset (considered velocity)
+		void Move(float offsetX, float offsetY);
+
+		virtual void Move() {}
+
+		// Set the position of the object
+		void Place(float x, float y);
+
+		// Get the object's current position
+		Vector2D& GetPosition();
+
 	protected:
 
-		// Useful tool to organize entities have inherited from this class. 
+		// Useful tool to organize entities that inherited from this class. 
 		// Remember to call upon declaring a new class that inherits from
 		// multiple other ones in case it does not call this by default in the constructor
 		void SetName(const std::string & name);

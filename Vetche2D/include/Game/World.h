@@ -10,7 +10,7 @@ namespace Vetche2D {
 		~World();
 		void UpdateScene();
 		void DrawScene();
-		void SpawnEntity(class Entity* ent);
+		void SpawnEntity(class Entity* const &ent);
 		void ClearEntity(unsigned int i);
 		std::vector<class Entity*>& GetEntityList();
 	private:

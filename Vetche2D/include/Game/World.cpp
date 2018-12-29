@@ -39,9 +39,9 @@ namespace Vetche2D {
 		}
 	}
 
-	void World::SpawnEntity(Entity * ent)
+	void World::SpawnEntity(Entity * const &ent)
 	{
-		ent_list.push_back(ent);
+		ent_list.push_back(ent); 
 	}
 
 	void World::ClearEntity(unsigned int i)

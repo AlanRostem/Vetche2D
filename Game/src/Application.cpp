@@ -15,11 +15,12 @@ void vtc::Setup()
 {
 
 	e = new vtc::Character(65.f, 55.f, 32.f, 32.f, 100.f);
-	e1 = new vtc::Character(234.f, 765.f, 32.f, 32.f, 250.f);
-	tstPlr = new TestPlayer();
-
 	game->SpawnEntity(e);
+
+	e1 = new vtc::Character(234.f, 765.f, 32.f, 32.f, 250.f);
 	game->SpawnEntity(e1);
+	
+	tstPlr = new TestPlayer();
 	game->SpawnEntity(tstPlr);
 
 	sprt = new vtc::Spritemap("../Game/src/vetche.png", "vetcheLogo");

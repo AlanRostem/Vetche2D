@@ -61,6 +61,23 @@ namespace Vetche2D {
 		return "Empty";
 	}
 
+	void Entity::Move(float offsetX, float offsetY)
+	{
+		pos.x += offsetX;
+		pos.y += offsetY;
+	}
+
+	void Entity::Place(float x, float y)
+	{
+		pos.x = x;
+		pos.y = y;
+	}
+
+	Vector2D & Entity::GetPosition()
+	{
+		return pos;
+	}
+
 	bool Entity::toRemove()
 	{
 		return m_toRemove;
@@ -101,7 +118,7 @@ namespace Vetche2D {
 
 	void Entity::EntityOperations(Entity * const & ent)
 	{
-		for (auto op : m_EntityOperations)
+		for (auto &op : m_EntityOperations)
 		{
 			op(ent);
 		}

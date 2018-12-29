@@ -2,7 +2,7 @@
 #include "../Core/Initialize.h"
 #include "../Misc/Casting.h"
 
-Vetche2D::Character::Character(float x, float y, float width, float height, float maxHP)
+Vetche2D::Character::Character(float x, float y, int width, int height, float maxHP)
 	: PhysicsObject(x, y, width, height), m_MaxHP(maxHP), m_CurrentHP(maxHP)
 {
 	SetName("Character");
