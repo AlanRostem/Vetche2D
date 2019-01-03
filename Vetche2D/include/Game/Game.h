@@ -3,8 +3,8 @@
 #include "World.h"
 #include "../Logging/Logger.h"
 #include "../Asset/AssetManager.h"
+
 #include <SFML/Graphics.hpp>
-#include <functional>
 
 namespace Vetche2D {
 	class Game : public Logger, public AssetManager, public sf::RenderWindow, public World

@@ -9,7 +9,7 @@ namespace Vetche2D {
 		height = Height;
 
 		SetAcceleration(0, 0.3);
-		SetFriction(0.9, 1);
+		SetFriction(0.97, 1);
 
 		AddUpdate([&] {
 			Accelerate();

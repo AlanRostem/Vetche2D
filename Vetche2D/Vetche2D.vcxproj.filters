@@ -72,6 +72,9 @@
     <ClInclude Include="include\vetchemain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Entity\Tile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\Asset\Asset.cpp">
@@ -123,6 +126,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="include\Misc\gfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\Entity\Tile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

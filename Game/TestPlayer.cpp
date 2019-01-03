@@ -2,6 +2,7 @@
 #include <vetche2d.h>
 
 float* speed = new float(4.f);
+float* acceleration = new float(.2f);
 
 TestPlayer::TestPlayer() : vtc::Character(0, 0, 32, 32, 100)
 {
@@ -13,17 +14,15 @@ TestPlayer::TestPlayer() : vtc::Character(0, 0, 32, 32, 100)
 	});
 
 	AddUpdate([&] {
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-			SetVelocity(GetVelocity().x, *speed);
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 			SetVelocity(GetVelocity().x, -*speed);
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-			SetVelocity(*speed, GetVelocity().y);
+			Accelerate(*acceleration, 0);
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-			SetVelocity(-*speed, GetVelocity().y);
+			Accelerate(-*acceleration, 0);
 
-		if (GetPosition().y + height > vtc::game->getSize().y)
-			Place(GetPosition().x, vtc::game->getSize().y - height);
+		if (GetPosition().y + (float)height > vtc::game->getSize().y)
+			Place(GetPosition().x, vtc::game->getSize().y - (float)height);
 	});
 }
 

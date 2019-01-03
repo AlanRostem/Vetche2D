@@ -145,6 +145,7 @@
     <ClInclude Include="include\Entity\CollisionCell.h" />
     <ClInclude Include="include\Entity\Entity.h" />
     <ClInclude Include="include\Entity\PhysicsObject.h" />
+    <ClInclude Include="include\Entity\Tile.h" />
     <ClInclude Include="include\Game\Game.h" />
     <ClInclude Include="include\Game\Gamemode.h" />
     <ClInclude Include="include\Game\World.h" />
@@ -165,6 +166,7 @@
     <ClCompile Include="include\Entity\CollisionCell.cpp" />
     <ClCompile Include="include\Entity\Entity.cpp" />
     <ClCompile Include="include\Entity\PhysicsObject.cpp" />
+    <ClCompile Include="include\Entity\Tile.cpp" />
     <ClCompile Include="include\Game\Game.cpp" />
     <ClCompile Include="include\Game\Gamemode.cpp" />
     <ClCompile Include="include\Game\World.cpp" />
