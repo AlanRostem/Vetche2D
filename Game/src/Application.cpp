@@ -1,5 +1,5 @@
 #include <vetche2d.h>
-#include "../TestPlayer.h"
+#include "TestPlayer.h"
 
 vtc::Character * e;
 vtc::Character * e1;
@@ -13,7 +13,6 @@ vtc::Animation plrAnim = vtc::Animation(0, 7, 0, 0.1f);
 
 void vtc::Setup()
 {
-
 	e = new vtc::Character(65.f, 55.f, 32, 32, 100.f);
 	game->SpawnEntity(e);
 
