@@ -10,9 +10,10 @@ vtc::Spritemap * sprt;
 vtc::Spritemap * plr;
 vtc::Animation plrAnim = vtc::Animation(0, 7, 0, 0.1f);
 
-
 void vtc::Setup()
 {
+	game->TestArrayJSON();
+
 	e = new vtc::Character(65.f, 55.f, 32, 32, 100.f);
 	game->SpawnEntity(e);
 

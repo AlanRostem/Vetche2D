@@ -3,11 +3,12 @@
 #include "World.h"
 #include "../Logging/Logger.h"
 #include "../Asset/AssetManager.h"
+#include "../File/JSONParser.h"
 
 #include <SFML/Graphics.hpp>
 
 namespace Vetche2D {
-	class Game : public Logger, public AssetManager, public sf::RenderWindow, public World
+	class Game : public Logger, public AssetManager, public sf::RenderWindow, public World, public JSONParser
 	{
 	public:
 		Game();
