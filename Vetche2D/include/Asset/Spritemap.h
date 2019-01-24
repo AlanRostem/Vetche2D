@@ -7,33 +7,35 @@
 namespace Vetche2D {
 	//Animation struct that can be created like: Animation a = {0, 1, 2, 3};
 	struct Animation {
-		Animation(int startColumn, int endColumn, int preferredRow, float frameSpeedSeconds)
-			: start_col(startColumn), end_col(endColumn), pref_row(preferredRow), frame_speed(frameSpeedSeconds)
+		Animation(int startColumn, int endColumn, int framesPerRow, float frameSpeedSeconds)
+			: start_col(startColumn), end_col(endColumn), frame_per_row(framesPerRow), frame_speed(frameSpeedSeconds)
 		{
 
 		}
 		//Initializable values
 		const int start_col; //Start of row
 		const int end_col; //End of row
-		const int pref_row; //Preferred row to be animated
+		const int frame_per_row; //Amount of frames per row
 		const float frame_speed; //Frame speed in seconds
 
 		//Non-init values
 		int current_col = start_col;
 		int current_row = 0;
 		float passed_time = 0;
-		bool stop = false;
 		bool reverse = false;
+		bool stop = false;
 	};
+
 
 	//A rectangle to be used as a definitive position on the sprite sheet
 	class OffsetRect
 	{
 	public:
 		OffsetRect(float X, float Y, int W, int H)
-			: offsetX(X), offsetY(Y), width(W), height(H)
+			: offsetX(X), offsetY(Y), width(W), height(H), 
+			  rect(sf::IntRect(int(X), int(Y), width, height))
 		{
-			rect = sf::IntRect(int(X), int(Y), width, height);
+			
 		}
 		OffsetRect() : offsetX(0), offsetY(0), width(0), height(0) {}
 		~OffsetRect() {}
