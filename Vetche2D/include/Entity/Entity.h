@@ -75,6 +75,6 @@ namespace Vetche2D {
 		std::vector<std::function<void(Entity* const &ent)>> m_EntityOperations;
 
 		// Exists only to enable the polymorphic class type. This function wont be used but must exist!
-		virtual void Polymorphic() = 0;
+		virtual void Polymorphic() {};
 	};
 }
