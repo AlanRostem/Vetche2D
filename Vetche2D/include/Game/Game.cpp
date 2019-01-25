@@ -39,6 +39,7 @@ void Vetche2D::Game::Update()
 		display(); //Window function
 
 		setFramerateLimit(60);
+		setVerticalSyncEnabled(true);
 		if (killApplication)
 		{
 			close(); 
