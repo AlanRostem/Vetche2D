@@ -21,8 +21,8 @@ void Vetche2D::Spritemap::BindSprite(const std::string& name, float offsetX, flo
 
 void Vetche2D::Spritemap::Animate(const std::string &name, Animation &anim)
 {
-	anim.passed_time += game->getDeltaTime();
-	if (anim.passed_time >= anim.frame_speed)
+
+	if ((anim.passed_time += game->getDeltaTime()) >= anim.frame_speed)
 	{
 		if (anim.current_col < anim.end_col)
 		{
@@ -34,8 +34,9 @@ void Vetche2D::Spritemap::Animate(const std::string &name, Animation &anim)
 		}
 		anim.passed_time = 0;
 	}
-	cropRects[name].rect.left = int(cropRects[name].offsetX + anim.current_col * cropRects[name].rect.width);
-	cropRects[name].rect.top = int(cropRects[name].offsetY + anim.pref_row * cropRects[name].rect.height);
+
+	cropRects[name].rect.left = int(getWidth(name) * (anim.current_col % anim.frame_per_row));
+	cropRects[name].rect.top = int(getHeight(name) * (anim.current_col / anim.frame_per_row));
 }
 
 void Vetche2D::Spritemap::Draw(const std::string&name, float x, float y)

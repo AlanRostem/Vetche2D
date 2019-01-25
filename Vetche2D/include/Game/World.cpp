@@ -32,7 +32,7 @@ namespace Vetche2D {
 	}
 
 	void World::DrawScene()
-	{
+	{ 
 		for (auto &e : ent_list)
 		{
 			e->Draw();

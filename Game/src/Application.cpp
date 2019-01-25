@@ -8,7 +8,7 @@ TestPlayer* tstPlr;
 vtc::Spritemap * sprt;
 
 vtc::Spritemap * plr;
-vtc::Animation plrAnim = vtc::Animation(0, 7, 0, 0.1f);
+vtc::Animation plrAnim = vtc::Animation(0, 7, 8, .1f);
 
 void vtc::Setup()
 {
