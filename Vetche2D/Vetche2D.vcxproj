@@ -76,7 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Vetche2D\Dependencies\SFML\include;$(SolutionDir)Vetche2D\Dependencies\rapidjson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vetche2D\Dependencies\SFML\include;$(SolutionDir)Vetche2D\Dependencies\rapidjson\include;$(SolutionDir)Vetche2D\Dependencies\rapidxml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)Vetche2D\Dependencies\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -89,7 +89,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Vetche2D\Dependencies\SFML\include;$(SolutionDir)Vetche2D\Dependencies\rapidjson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vetche2D\Dependencies\SFML\include;$(SolutionDir)Vetche2D\Dependencies\rapidjson\include;$(SolutionDir)Vetche2D\Dependencies\rapidxml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)Vetche2D\Dependencies\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -104,7 +104,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Vetche2D\Dependencies\SFML\include;$(SolutionDir)Vetche2D\Dependencies\rapidjson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vetche2D\Dependencies\SFML\include;$(SolutionDir)Vetche2D\Dependencies\rapidjson\include;$(SolutionDir)Vetche2D\Dependencies\rapidxml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -123,7 +123,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Vetche2D\Dependencies\SFML\include;$(SolutionDir)Vetche2D\Dependencies\rapidjson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vetche2D\Dependencies\SFML\include;$(SolutionDir)Vetche2D\Dependencies\rapidjson\include;$(SolutionDir)Vetche2D\Dependencies\rapidxml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -156,6 +156,7 @@
     <ClInclude Include="include\Misc\gfx.h" />
     <ClInclude Include="include\Misc\VMath.h" />
     <ClInclude Include="include\vetchemain.h" />
+    <ClInclude Include="include\File\XMLParser.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\Asset\Asset.cpp" />
@@ -177,6 +178,7 @@
     <ClCompile Include="include\Misc\gfx.cpp" />
     <ClCompile Include="include\Misc\VMath.cpp" />
     <ClCompile Include="include\vetche2d.h" />
+    <ClCompile Include="include\File\XMLParser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="..\..\..\Users\ALANRO~1\AppData\Local\Temp\Rar$DRa24140.17927\abel-regular.ttf" />
