@@ -4,13 +4,17 @@
 float* speed = new float(4.f);
 float* acceleration = new float(.2f);
 
+vtc::Spritemap* sprite = new vtc::Spritemap("../Game/src/bally128x128.png", "bally");
+vtc::Animation plrAnim = vtc::Animation(0, 7, 4, .1f);
+
 TestPlayer::TestPlayer() : vtc::Character(0, 0, 32, 32, 100)
 {
-	width = 32;
-	height = 32;
+	width = 128;
+	height = 128;
+	sprite->BindSprite("bally", 0, 0, 128, 128);
 	AddDrawFunction([&] {
-		vtc::gfx::FillColor(255, 0, 0, 250);
-		vtc::gfx::FillRect(pos.x, pos.y, width, height);
+		sprite->Animate("bally", plrAnim);
+		sprite->Draw("bally", pos.x, pos.y);
 	});
 
 	AddUpdate([&] {
