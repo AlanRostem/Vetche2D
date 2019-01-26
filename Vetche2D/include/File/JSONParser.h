@@ -15,7 +15,7 @@ namespace Vetche2D {
 		JSONParser();
 		~JSONParser();
 		const char* const & LoadJSONToCharPtr(const char* file_path);
-		void TestArrayJSON();
+		rapidjson::Document JSONObject();
 	private:
 		std::ifstream m_InputStream;
 		std::string m_JSONFileStr;

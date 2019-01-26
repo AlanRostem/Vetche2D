@@ -6,8 +6,6 @@ float* acceleration = new float(.2f);
 
 TestPlayer::TestPlayer() : vtc::Character(0, 0, 32, 32, 100)
 {
-	width = 32;
-	height = 32;
 	AddDrawFunction([&] {
 		vtc::gfx::FillColor(255, 0, 0, 250);
 		vtc::gfx::FillRect(pos.x, pos.y, width, height);

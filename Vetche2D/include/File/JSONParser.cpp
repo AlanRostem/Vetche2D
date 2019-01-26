@@ -29,23 +29,14 @@ namespace Vetche2D {
 		return m_JSONFileChar;
 	}
 
-	void JSONParser::TestArrayJSON()
+
+	rj::Document JSONParser::JSONObject()
 	{
 		//std::cout << std::experimental::filesystem::current_path().string() << std::endl;
 
 		rj::Document document;
 		document.Parse(LoadJSONToCharPtr("test.json"));
 
-		assert(document.HasMember("tilemap"));
-		assert(document["tilemap"].IsArray());
-
-		std::cout << "[";
-
-		for (unsigned int i = 0; i < document["tilemap"].GetArray().Size(); i++)
-		{
-			std::cout << document["tilemap"].GetArray()[i].GetInt() << ", ";
-		}
-
-		std::cout << "]";
+		return document;
 	}
 }
