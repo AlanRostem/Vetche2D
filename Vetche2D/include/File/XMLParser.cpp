@@ -27,11 +27,7 @@ namespace Vetche2D {
 		return m_XMLFileChar;
 	}
 
-	rx::xml_document<> XMLParser::XMLDocument() 
-	{
-		
 	
-	};
 }
 
 

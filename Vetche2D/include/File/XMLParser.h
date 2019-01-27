@@ -13,7 +13,6 @@ namespace Vetche2D {
 		XMLParser();
 		~XMLParser();
 		const char* const & LoadXMLToCharPtr(const char* file_path);
-		rapidxml::xml_document<> XMLDocument();
 
 	private:
 		std::ifstream m_InputStream;
