@@ -7,8 +7,7 @@ TestPlayer* tstPlr;
 
 vtc::Spritemap * sprt;
 
-vtc::Spritemap * plr;
-vtc::Animation plrAnim = vtc::Animation(0, 7, 8, .1f);
+
 
 
 
@@ -16,8 +15,7 @@ void vtc::Setup()
 {
 	game->LoadJSONToCharPtr("test.json");
 
-
-	auto test = game->TestArrayJSON();
+	auto test = game->JSONObject();
 
 	assert(test.IsObject());
 	
@@ -33,8 +31,6 @@ void vtc::Setup()
 	sprt = new vtc::Spritemap("../Game/src/vetche.png", "vetcheLogo");
 	sprt->BindSprite("full", 0, 0, 1198, 380);
 
-	plr = new vtc::Spritemap("../Game/src/player_test.png", "player");
-	plr->BindSprite("walk", 0, 0, 32, 32);
 }
 
 void vtc::Step()
@@ -53,8 +49,6 @@ void vtc::Draw()
 {
 	//const std::string&name, float angle, float facX, float facY, float x, float y
 	sprt->Draw("full", 0, 0.5 ,0.5, 200, 200);
-	plr->Animate("walk", plrAnim);
-	plr->Draw("walk", 350, 183);
 }
 
 #include <vetchemain.h>
